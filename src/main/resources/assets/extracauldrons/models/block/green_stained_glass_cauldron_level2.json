@@ -1,5 +1,5 @@
 {
-	"parent": "block/cauldron_level2",
+	"parent": "extracauldrons:block/transparent_cauldron_level2",
 	"textures": {
 		"particle": "#side",
 		"top": "block/green_stained_glass",
