@@ -58,32 +58,34 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		// Stones
-		registerCauldron("cobblestone");
 		registerCauldron("stone");
+		registerCauldron("cobblestone");
 
 		// Stone variants
-		registerCauldron("andesite", Blocks.ANDESITE);
-		registerCauldron("polished_andesite", Blocks.POLISHED_ANDESITE);
-		registerCauldron("diorite", Blocks.DIORITE);
-		registerCauldron("polished_diorite", Blocks.POLISHED_DIORITE);
 		registerCauldron("granite", Blocks.GRANITE);
 		registerCauldron("polished_granite", Blocks.POLISHED_GRANITE);
+		registerCauldron("diorite", Blocks.DIORITE);
+		registerCauldron("polished_diorite", Blocks.POLISHED_DIORITE);
+		registerCauldron("andesite", Blocks.ANDESITE);
+		registerCauldron("polished_andesite", Blocks.POLISHED_ANDESITE);
 
 		// Wood
-		registerFlammableCauldron("acacia", Blocks.ACACIA_PLANKS);
-		registerFlammableCauldron("dark_oak", Blocks.DARK_OAK_PLANKS);
-		registerFlammableCauldron("birch", Blocks.BIRCH_PLANKS);
-		registerFlammableCauldron("jungle", Blocks.JUNGLE_PLANKS);
 		registerFlammableCauldron("oak", Blocks.OAK_PLANKS);
 		registerFlammableCauldron("spruce", Blocks.SPRUCE_PLANKS);
+		registerFlammableCauldron("birch", Blocks.BIRCH_PLANKS);
+		registerFlammableCauldron("jungle", Blocks.JUNGLE_PLANKS);
+		registerFlammableCauldron("acacia", Blocks.ACACIA_PLANKS);
+		registerFlammableCauldron("dark_oak", Blocks.DARK_OAK_PLANKS);
 
 		// Metals and gems
 		registerSpecialCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));
 		registerCauldron("diamond", Blocks.DIAMOND_BLOCK);
 
-		// Miscellaneous
-		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
-		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
+		// Glass
 		GLASS_CAULDRON = registerSpecialWaterCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
+
+		// Miscellaneous
+		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
+		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
 	}
 }
