@@ -1,5 +1,5 @@
 {
-	"parent": "block/cauldron",
+	"parent": "extracauldrons:block/cauldron",
 	"textures": {
 		"particle": "#side",
 		"top": "block/cobblestone",
