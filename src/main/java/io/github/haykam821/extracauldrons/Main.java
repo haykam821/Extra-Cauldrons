@@ -11,11 +11,28 @@ import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class Main implements ModInitializer {
 	public static Block GLASS_CAULDRON;
+	public static Block WHITE_STAINED_GLASS_CAULDRON;
+	public static Block ORANGE_STAINED_GLASS_CAULDRON;
+	public static Block MAGENTA_STAINED_GLASS_CAULDRON;
+	public static Block LIGHT_BLUE_STAINED_GLASS_CAULDRON;
+	public static Block YELLOW_STAINED_GLASS_CAULDRON;
+	public static Block LIME_STAINED_GLASS_CAULDRON;
+	public static Block PINK_STAINED_GLASS_CAULDRON;
+	public static Block GRAY_STAINED_GLASS_CAULDRON;
+	public static Block LIGHT_GRAY_STAINED_GLASS_CAULDRON;
+	public static Block CYAN_STAINED_GLASS_CAULDRON;
+	public static Block PURPLE_STAINED_GLASS_CAULDRON;
+	public static Block BLUE_STAINED_GLASS_CAULDRON;
+	public static Block BROWN_STAINED_GLASS_CAULDRON;
+	public static Block GREEN_STAINED_GLASS_CAULDRON;
+	public static Block RED_STAINED_GLASS_CAULDRON;
+	public static Block BLACK_STAINED_GLASS_CAULDRON;
 
 	public Block registerSpecialCauldron(String type, Block block) {
 		Identifier identifier = new Identifier("extracauldrons", type + "_cauldron");
@@ -83,6 +100,22 @@ public class Main implements ModInitializer {
 
 		// Glass
 		GLASS_CAULDRON = registerSpecialWaterCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
+		WHITE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("white_stained_glass", new StainedGlassCauldronBlock(DyeColor.WHITE, FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS).build()));
+		ORANGE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("orange_stained_glass", new StainedGlassCauldronBlock(DyeColor.ORANGE, FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS).build()));
+		MAGENTA_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("magenta_stained_glass", new StainedGlassCauldronBlock(DyeColor.MAGENTA, FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS).build()));
+		LIGHT_BLUE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("light_blue_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIGHT_BLUE, FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS).build()));
+		YELLOW_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("yellow_stained_glass", new StainedGlassCauldronBlock(DyeColor.YELLOW, FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS).build()));
+		LIME_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("lime_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIME, FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS).build()));
+		PINK_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("pink_stained_glass", new StainedGlassCauldronBlock(DyeColor.PINK, FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS).build()));
+		GRAY_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("gray_stained_glass", new StainedGlassCauldronBlock(DyeColor.GRAY, FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS).build()));
+		LIGHT_GRAY_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("light_gray_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIGHT_GRAY, FabricBlockSettings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS).build()));
+		CYAN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("cyan_stained_glass", new StainedGlassCauldronBlock(DyeColor.CYAN, FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS).build()));
+		PURPLE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("purple_stained_glass", new StainedGlassCauldronBlock(DyeColor.PURPLE, FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS).build()));
+		BLUE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("blue_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLUE, FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS).build()));
+		BROWN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("brown_stained_glass", new StainedGlassCauldronBlock(DyeColor.BROWN, FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS).build()));
+		GREEN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("green_stained_glass", new StainedGlassCauldronBlock(DyeColor.GREEN, FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS).build()));
+		RED_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("red_stained_glass", new StainedGlassCauldronBlock(DyeColor.RED, FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS).build()));
+		BLACK_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("black_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLACK, FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS).build()));
 
 		// Miscellaneous
 		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));

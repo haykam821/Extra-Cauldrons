@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"level=0": {
+			"model": "extracauldrons:block/light_blue_stained_glass_cauldron"
+		},
+		"level=1": {
+			"model": "extracauldrons:block/light_blue_stained_glass_cauldron_level1"
+		},
+		"level=2": {
+			"model": "extracauldrons:block/light_blue_stained_glass_cauldron_level2"
+		},
+		"level=3": {
+			"model": "extracauldrons:block/light_blue_stained_glass_cauldron_level3"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron_level1",
+	"textures": {
+		"particle": "#side",
+		"top": "block/blue_stained_glass",
+		"bottom": "block/blue_stained_glass",
+		"side": "block/blue_stained_glass",
+		"inside": "block/blue_stained_glass"
+	}
+}
