@@ -83,7 +83,7 @@ public class Main implements ModInitializer {
 
 		// Miscellaneous
 		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
-		registerSpecialCauldron("bricks", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
+		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
 		GLASS_CAULDRON = registerSpecialWaterCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
 	}
 }

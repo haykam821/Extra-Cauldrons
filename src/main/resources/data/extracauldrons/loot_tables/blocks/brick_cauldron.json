@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "extracauldrons:bricks_cauldron"
+					"name": "extracauldrons:brick_cauldron"
 				}
 			],
 			"conditions": [
