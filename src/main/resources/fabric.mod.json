@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "extracauldrons",
+	"version": "${version}",
+	"name": "Extra Cauldrons",
+	"description": "Adds additional cauldrons to Minecraft.",
+	"authors": [
+		"haykam821"
+	],
+	"contact": {
+		"homepage": "https://github.com/haykam821/Extra-Cauldrons#readme",
+		"issues": "https://github.com/haykam821/Extra-Cauldrons/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/extracauldrons/icon.png",
+	"entrypoints": {
+		"main": [
+			"io.github.haykam821.extracauldrons.Main"
+		],
+		"client": [
+			"io.github.haykam821.extracauldrons.ClientMain"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.4.0",
+		"fabric": "*"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "block/spruce_planks",
+		"bottom": "block/spruce_planks",
+		"side": "block/spruce_planks",
+		"inside": "block/spruce_planks"
+	}
+}

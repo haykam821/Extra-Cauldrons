@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "block/cobblestone",
+		"bottom": "block/cobblestone",
+		"side": "block/cobblestone",
+		"inside": "block/cobblestone"
+	}
+}

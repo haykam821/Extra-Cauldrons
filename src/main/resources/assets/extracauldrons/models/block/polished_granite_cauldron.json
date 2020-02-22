@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "block/polished_granite",
+		"bottom": "block/polished_granite",
+		"side": "block/polished_granite",
+		"inside": "block/polished_granite"
+	}
+}
