@@ -21,18 +21,24 @@ public class Main implements ModInitializer {
 		Identifier identifier = new Identifier("extracauldrons", type + "_cauldron");
 
 		Registry.register(Registry.BLOCK, identifier, block);
-		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
-			if (view == null || pos == null) return -1;
-			return BiomeColors.getWaterColor(view, pos);
-		}, block);
-
 		Registry.register(Registry.ITEM, identifier, new BlockItem(block, new Item.Settings().group(ItemGroup.BREWING)));
 
 		return block;
 	}
 
+	public Block registerSpecialWaterCauldron(String type, Block block) {
+		registerSpecialCauldron(type, block);
+		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
+			if (view == null || pos == null)
+				return -1;
+			return BiomeColors.getWaterColor(view, pos);
+		}, block);
+
+		return block;
+	}
+
 	public Block registerCauldron(String type, Block base) {
-		return registerSpecialCauldron(type, new CauldronBlock(FabricBlockSettings.copy(base).build()));
+		return registerSpecialWaterCauldron(type, new CauldronBlock(FabricBlockSettings.copy(base).build()));
 	}
 
 	public Block registerCauldron(String type) {
@@ -72,12 +78,12 @@ public class Main implements ModInitializer {
 		registerFlammableCauldron("spruce", Blocks.SPRUCE_PLANKS);
 
 		// Metals and gems
-		registerCauldron("gold", Blocks.GOLD_BLOCK);
+		registerSpecialCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));
 		registerCauldron("diamond", Blocks.DIAMOND_BLOCK);
 
 		// Miscellaneous
-		registerCauldron("obsidian", Blocks.OBSIDIAN);
-		registerCauldron("bricks", Blocks.BRICKS);
-		GLASS_CAULDRON = registerSpecialCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
+		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
+		registerSpecialCauldron("bricks", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
+		GLASS_CAULDRON = registerSpecialWaterCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
 	}
 }
