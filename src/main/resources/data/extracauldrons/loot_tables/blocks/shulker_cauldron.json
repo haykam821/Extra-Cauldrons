@@ -1,0 +1,28 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "extracauldrons:shulker_cauldron"
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			],
+			"functions": [
+				{
+					"function": "minecraft:copy_state",
+					"block": "extracauldrons:shulker_cauldron",
+					"properties": [
+						"level"
+					]
+				}
+			]
+		}
+	]
+}
