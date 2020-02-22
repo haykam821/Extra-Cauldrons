@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#*#",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "extracauldrons:glass_cauldron"
+		},
+		"*": {
+			"item": "minecraft:magenta_dye"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:magenta_stained_glass_cauldron",
+		"count": 8
+	}
+}

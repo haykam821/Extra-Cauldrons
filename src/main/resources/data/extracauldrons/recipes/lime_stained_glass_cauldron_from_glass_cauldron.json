@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#*#",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "extracauldrons:glass_cauldron"
+		},
+		"*": {
+			"item": "minecraft:lime_dye"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:lime_stained_glass_cauldron",
+		"count": 8
+	}
+}
