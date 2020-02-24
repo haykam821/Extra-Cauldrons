@@ -38,6 +38,7 @@ dependencies {
 
 	// Mod integration
 	modImplementation("com.terraformersmc:terrestria:${project.terrestria_version}");
+	modImplementation("com.terraformersmc:traverse:${project.traverse_version}");
 }
 
 processResources {

@@ -1,6 +1,8 @@
 package io.github.haykam821.extracauldrons;
 
 import com.terraformersmc.terrestria.init.TerrestriaBlocks;
+import com.terraformersmc.traverse.block.TraverseBlocks;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -83,6 +85,9 @@ public class Main implements ModInitializer {
 		registerFlammableCauldron("japanese_maple", TerrestriaBlocks.JAPANESE_MAPLE.planks);
 		registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
 		registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
+
+		// Traverse
+		registerFlammableCauldron("fir", TraverseBlocks.FIR_PLANKS);
 	}
 
 	@Override

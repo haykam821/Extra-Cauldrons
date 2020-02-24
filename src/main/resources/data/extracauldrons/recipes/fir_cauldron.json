@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "extracauldrons:wooden_cauldron",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "traverse:fir_planks"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:fir_cauldron"
+	}
+}
