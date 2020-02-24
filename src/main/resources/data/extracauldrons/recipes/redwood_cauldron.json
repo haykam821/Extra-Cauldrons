@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "extracauldrons:wooden_cauldron",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "terrestria:redwood_planks"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:redwood_cauldron"
+	}
+}

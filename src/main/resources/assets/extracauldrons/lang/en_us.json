@@ -36,5 +36,13 @@
 	"block.extracauldrons.stone_cauldron": "Stone Cauldron",
 	"block.extracauldrons.white_stained_glass_cauldron": "White Stained Glass Cauldron",
 	"block.extracauldrons.yellow_stained_glass_cauldron": "Yellow Stained Glass Cauldron",
-	"cauldron.contents": "Contains %d bottles of water"
+	"cauldron.contents": "Contains %d bottles of water",
+	"block.extracauldrons.redwood_cauldron": "Redwood Cauldron",
+	"block.extracauldrons.hemlock_cauldron": "Hemlock Cauldron",
+	"block.extracauldrons.rubber_cauldron": "Rubber Cauldron",
+	"block.extracauldrons.cypress_cauldron": "Cypress Cauldron",
+	"block.extracauldrons.willow_cauldron": "Willow Cauldron",
+	"block.extracauldrons.japanese_maple_cauldron": "Japanese Maple Cauldron",
+	"block.extracauldrons.rainbow_eucalyptus_cauldron": "Rainbow Eucalyptus Cauldron",
+	"block.extracauldrons.sakura_cauldron": "Sakura Cauldron"
 }

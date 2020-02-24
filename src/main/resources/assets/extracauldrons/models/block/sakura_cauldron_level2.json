@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron_level2",
+	"textures": {
+		"particle": "#side",
+		"top": "terrestria:block/sakura_planks",
+		"bottom": "terrestria:block/sakura_planks",
+		"side": "terrestria:block/sakura_planks",
+		"inside": "terrestria:block/sakura_planks"
+	}
+}

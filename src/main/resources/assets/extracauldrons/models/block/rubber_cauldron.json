@@ -1,0 +1,10 @@
+{
+	"parent": "extracauldrons:block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "terrestria:block/rubber_planks",
+		"bottom": "terrestria:block/rubber_planks",
+		"side": "terrestria:block/rubber_planks",
+		"inside": "terrestria:block/rubber_planks"
+	}
+}

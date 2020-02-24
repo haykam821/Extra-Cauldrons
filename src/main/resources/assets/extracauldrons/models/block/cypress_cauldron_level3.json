@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron_level3",
+	"textures": {
+		"particle": "#side",
+		"top": "terrestria:block/cypress_planks",
+		"bottom": "terrestria:block/cypress_planks",
+		"side": "terrestria:block/cypress_planks",
+		"inside": "terrestria:block/cypress_planks"
+	}
+}

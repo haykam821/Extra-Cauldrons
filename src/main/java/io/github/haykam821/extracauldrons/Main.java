@@ -1,5 +1,6 @@
 package io.github.haykam821.extracauldrons;
 
+import com.terraformersmc.terrestria.init.TerrestriaBlocks;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -72,6 +73,18 @@ public class Main implements ModInitializer {
 		return registerFlammableCauldron(type, Blocks.CAULDRON);
 	}
 
+	public void registerModIntergationCauldrons() {
+		// Terrestria
+		registerFlammableCauldron("redwood", TerrestriaBlocks.REDWOOD.planks);
+		registerFlammableCauldron("hemlock", TerrestriaBlocks.HEMLOCK.planks);
+		registerFlammableCauldron("rubber", TerrestriaBlocks.RUBBER.planks);
+		registerFlammableCauldron("cypress", TerrestriaBlocks.CYPRESS.planks);
+		registerFlammableCauldron("willow", TerrestriaBlocks.WILLOW.planks);
+		registerFlammableCauldron("japanese_maple", TerrestriaBlocks.JAPANESE_MAPLE.planks);
+		registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
+		registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
+	}
+
 	@Override
 	public void onInitialize() {
 		// Stones
@@ -124,5 +137,8 @@ public class Main implements ModInitializer {
 
 		// Shulker
 		registerSpecialWaterCauldron("shulker", new ShulkerCauldronBlock(FabricBlockSettings.copy(Blocks.SHULKER_BOX).build()));
+
+		// Mod integrations
+		registerModIntergationCauldrons();
 	}
 }

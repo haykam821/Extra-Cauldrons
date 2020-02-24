@@ -5,6 +5,14 @@
 		"extracauldrons:birch_cauldron",
 		"extracauldrons:jungle_cauldron",
 		"extracauldrons:oak_cauldron",
-		"extracauldrons:spruce_cauldron"
+		"extracauldrons:spruce_cauldron",
+		"extracauldrons:redwood_cauldron",
+		"extracauldrons:hemlock_cauldron",
+		"extracauldrons:rubber_cauldron",
+		"extracauldrons:cypress_cauldron",
+		"extracauldrons:willow_cauldron",
+		"extracauldrons:japanese_maple_cauldron",
+		"extracauldrons:rainbow_eucalyptus_cauldron",
+		"extracauldrons:sakura_cauldron"
 	]
 }
