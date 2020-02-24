@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"wc",
+		"cw"
+	],
+	"key": {
+		"w": {
+			"item": "minecraft:nether_wart"
+		},
+		"c": {
+			"item": "extracauldrons:nether_brick_cauldron"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:red_nether_brick_cauldron",
+		"count": 2
+	}
+}
