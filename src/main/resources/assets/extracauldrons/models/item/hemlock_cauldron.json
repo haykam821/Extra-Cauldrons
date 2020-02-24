@@ -1,3 +1,6 @@
 {
-	"parent": "extracauldrons:block/hemlock_cauldron"
+	"parent": "extracauldrons:block/hemlock_cauldron",
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
 }

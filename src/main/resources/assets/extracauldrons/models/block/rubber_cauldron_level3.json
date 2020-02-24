@@ -6,5 +6,8 @@
 		"bottom": "terrestria:block/rubber_planks",
 		"side": "terrestria:block/rubber_planks",
 		"inside": "terrestria:block/rubber_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

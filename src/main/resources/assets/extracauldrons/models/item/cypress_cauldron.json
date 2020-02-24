@@ -1,3 +1,6 @@
 {
-	"parent": "extracauldrons:block/cypress_cauldron"
+	"parent": "extracauldrons:block/cypress_cauldron",
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
 }

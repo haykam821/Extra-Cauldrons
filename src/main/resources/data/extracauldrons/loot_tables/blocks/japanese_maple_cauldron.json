@@ -15,5 +15,8 @@
 				}
 			]
 		}
-	]
+	],
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
 }

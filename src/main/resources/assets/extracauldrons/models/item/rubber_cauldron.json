@@ -1,3 +1,6 @@
 {
-	"parent": "extracauldrons:block/rubber_cauldron"
+	"parent": "extracauldrons:block/rubber_cauldron",
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
 }

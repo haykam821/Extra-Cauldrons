@@ -1,3 +1,6 @@
 {
-	"parent": "extracauldrons:block/fir_cauldron"
+	"parent": "extracauldrons:block/fir_cauldron",
+	"when": {
+		"libcd:mod_loaded": "traverse"
+	}
 }

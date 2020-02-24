@@ -1,3 +1,6 @@
 {
-	"parent": "extracauldrons:block/sakura_cauldron"
+	"parent": "extracauldrons:block/sakura_cauldron",
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
 }

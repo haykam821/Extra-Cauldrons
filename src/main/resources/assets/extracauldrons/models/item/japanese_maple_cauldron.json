@@ -1,3 +1,6 @@
 {
-	"parent": "extracauldrons:block/japanese_maple_cauldron"
+	"parent": "extracauldrons:block/japanese_maple_cauldron",
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
 }

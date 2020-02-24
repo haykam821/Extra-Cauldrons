@@ -6,5 +6,8 @@
 		"bottom": "terrestria:block/rainbow_eucalyptus_planks",
 		"side": "terrestria:block/rainbow_eucalyptus_planks",
 		"inside": "terrestria:block/rainbow_eucalyptus_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

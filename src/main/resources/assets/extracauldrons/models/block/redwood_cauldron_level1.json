@@ -6,5 +6,8 @@
 		"bottom": "terrestria:block/redwood_planks",
 		"side": "terrestria:block/redwood_planks",
 		"inside": "terrestria:block/redwood_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

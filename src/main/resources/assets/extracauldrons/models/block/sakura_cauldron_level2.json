@@ -6,5 +6,8 @@
 		"bottom": "terrestria:block/sakura_planks",
 		"side": "terrestria:block/sakura_planks",
 		"inside": "terrestria:block/sakura_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

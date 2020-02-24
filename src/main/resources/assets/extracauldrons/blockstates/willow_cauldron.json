@@ -12,5 +12,8 @@
 		"level=3": {
 			"model": "extracauldrons:block/willow_cauldron_level3"
 		}
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

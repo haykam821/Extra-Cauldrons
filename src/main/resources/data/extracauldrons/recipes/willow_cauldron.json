@@ -13,5 +13,8 @@
 	},
 	"result": {
 		"item": "extracauldrons:willow_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

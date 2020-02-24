@@ -13,5 +13,8 @@
 	},
 	"result": {
 		"item": "extracauldrons:japanese_maple_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
 	}
 }

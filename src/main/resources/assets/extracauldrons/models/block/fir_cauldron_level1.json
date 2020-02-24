@@ -6,5 +6,8 @@
 		"bottom": "traverse:block/fir_planks",
 		"side": "traverse:block/fir_planks",
 		"inside": "traverse:block/fir_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "traverse"
 	}
 }

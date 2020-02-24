@@ -6,6 +6,7 @@ import com.terraformersmc.traverse.block.TraverseBlocks;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CauldronBlock;
@@ -76,18 +77,24 @@ public class Main implements ModInitializer {
 	}
 
 	public void registerModIntergationCauldrons() {
+		FabricLoader loader = FabricLoader.getInstance();
+
 		// Terrestria
-		registerFlammableCauldron("redwood", TerrestriaBlocks.REDWOOD.planks);
-		registerFlammableCauldron("hemlock", TerrestriaBlocks.HEMLOCK.planks);
-		registerFlammableCauldron("rubber", TerrestriaBlocks.RUBBER.planks);
-		registerFlammableCauldron("cypress", TerrestriaBlocks.CYPRESS.planks);
-		registerFlammableCauldron("willow", TerrestriaBlocks.WILLOW.planks);
-		registerFlammableCauldron("japanese_maple", TerrestriaBlocks.JAPANESE_MAPLE.planks);
-		registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
-		registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
+		if (loader.isModLoaded("terrestria")) {
+			registerFlammableCauldron("redwood", TerrestriaBlocks.REDWOOD.planks);
+			registerFlammableCauldron("hemlock", TerrestriaBlocks.HEMLOCK.planks);
+			registerFlammableCauldron("rubber", TerrestriaBlocks.RUBBER.planks);
+			registerFlammableCauldron("cypress", TerrestriaBlocks.CYPRESS.planks);
+			registerFlammableCauldron("willow", TerrestriaBlocks.WILLOW.planks);
+			registerFlammableCauldron("japanese_maple", TerrestriaBlocks.JAPANESE_MAPLE.planks);
+			registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
+			registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
+		}
 
 		// Traverse
-		registerFlammableCauldron("fir", TraverseBlocks.FIR_PLANKS);
+		if (loader.isModLoaded("traverse")) {
+			registerFlammableCauldron("fir", TraverseBlocks.FIR_PLANKS);
+		}
 	}
 
 	@Override

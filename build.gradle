@@ -20,6 +20,10 @@ repositories {
 		url = "https://maven.fabricmc.net/"
 	}
 	maven {
+		name = "Cotton"
+		url = "http://server.bbkr.space:8081/artifactory/libs-release/"
+	}
+	maven {
 		name = "TerraformersMC"
 		url = "http://maven.modmuss50.me/com/terraformersmc/terrestria/"
 	}
@@ -36,9 +40,13 @@ dependencies {
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 	include("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 
+	// LibCD
+	modImplementation("io.github.cottonmc:LibCD:${project.libcd_version}")
+	include("io.github.cottonmc:LibCD:${project.libcd_version}")
+
 	// Mod integration
-	modImplementation("com.terraformersmc:terrestria:${project.terrestria_version}");
-	modImplementation("com.terraformersmc:traverse:${project.traverse_version}");
+	modCompileOnly("com.terraformersmc:terrestria:${project.terrestria_version}");
+	modCompileOnly("com.terraformersmc:traverse:${project.traverse_version}");
 }
 
 processResources {
