@@ -1,8 +1,8 @@
 {
 	"values": [
 		"extracauldrons:acacia_cauldron",
-		"extracauldrons:dark_oak_cauldron",
 		"extracauldrons:birch_cauldron",
+		"extracauldrons:dark_oak_cauldron",
 		"extracauldrons:jungle_cauldron",
 		"extracauldrons:oak_cauldron",
 		"extracauldrons:spruce_cauldron"
@@ -13,14 +13,14 @@
 				"mod_loaded": "terrestria"
 			},
 			"values": [
-				"extracauldrons:redwood_cauldron",
-				"extracauldrons:hemlock_cauldron",
-				"extracauldrons:rubber_cauldron",
 				"extracauldrons:cypress_cauldron",
-				"extracauldrons:willow_cauldron",
+				"extracauldrons:hemlock_cauldron",
 				"extracauldrons:japanese_maple_cauldron",
 				"extracauldrons:rainbow_eucalyptus_cauldron",
-				"extracauldrons:sakura_cauldron"
+				"extracauldrons:redwood_cauldron",
+				"extracauldrons:rubber_cauldron",
+				"extracauldrons:sakura_cauldron",
+				"extracauldrons:willow_cauldron"
 			]
 		}, {
 			"when": {
