@@ -1,5 +1,6 @@
 package io.github.haykam821.extracauldrons;
 
+import com.fabriccommunity.thehallow.registry.HallowedBlocks;
 import com.terraformersmc.terrestria.init.TerrestriaBlocks;
 import com.terraformersmc.traverse.block.TraverseBlocks;
 
@@ -94,6 +95,11 @@ public class Main implements ModInitializer {
 		// Traverse
 		if (loader.isModLoaded("traverse")) {
 			registerFlammableCauldron("fir", TraverseBlocks.FIR_PLANKS);
+		}
+
+		// The Hallow
+		if (loader.isModLoaded("thehallow")) {
+			registerFlammableCauldron("deadwood", HallowedBlocks.DEADWOOD_PLANKS);
 		}
 	}
 

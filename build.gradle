@@ -27,6 +27,10 @@ repositories {
 		name = "TerraformersMC"
 		url = "http://maven.modmuss50.me/com/terraformersmc/terrestria/"
 	}
+	maven {
+		name = "Jitpack"
+		url = "https://jitpack.io"
+	}
 	jcenter()
 }
 
@@ -47,6 +51,7 @@ dependencies {
 	// Mod integration
 	modCompileOnly("com.terraformersmc:terrestria:${project.terrestria_version}");
 	modCompileOnly("com.terraformersmc:traverse:${project.traverse_version}");
+	modCompile("com.github.fabric-community:the-hallow:${project.the_hallow_version}");
 }
 
 processResources {

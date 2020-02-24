@@ -29,6 +29,13 @@
 			"values": [
 				"extracauldrons:fir_cauldron"
 			]
+		}, {
+			"when": {
+				"mod_loaded": "thehallow"
+			},
+			"values": [
+				"extracauldrons:deadwood_cauldron"
+			]
 		}]
 	}
 }

@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/deadwood_cauldron",
+	"when": {
+		"libcd:mod_loaded": "thehallow"
+	}
+}
