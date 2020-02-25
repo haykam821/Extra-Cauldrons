@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/mossy_basalt_cobblestone_cauldron",
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
+}

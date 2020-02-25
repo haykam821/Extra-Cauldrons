@@ -95,6 +95,7 @@ public class Main implements ModInitializer {
 			// Basalt stones
 			registerSpecialCauldron("basalt", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.plain.full).build()));
 			registerSpecialCauldron("basalt_cobblestone", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.cobblestone.full).build()));
+			registerSpecialCauldron("mossy_basalt_cobblestone", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.mossyCobblestone.full).build()));
 		}
 
 		// Traverse

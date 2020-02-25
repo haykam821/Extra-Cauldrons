@@ -48,7 +48,8 @@
 				},
 				"values": [
 					"extracauldrons:basalt_cauldron",
-					"extracauldrons:basalt_cobblestone_cauldron"
+					"extracauldrons:basalt_cobblestone_cauldron",
+					"extracauldrons:mossy_basalt_cobblestone_cauldron"
 				]
 			}
 		]
