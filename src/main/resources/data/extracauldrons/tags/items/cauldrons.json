@@ -47,7 +47,8 @@
 					"mod_loaded": "terrestria"
 				},
 				"values": [
-					"extracauldrons:basalt_cauldron"
+					"extracauldrons:basalt_cauldron",
+					"extracauldrons:basalt_cobblestone_cauldron"
 				]
 			}
 		]

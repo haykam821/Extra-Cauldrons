@@ -92,8 +92,9 @@ public class Main implements ModInitializer {
 			registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
 			registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
 
-			// Basalt
+			// Basalt stones
 			registerSpecialCauldron("basalt", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.plain.full).build()));
+			registerSpecialCauldron("basalt_cobblestone", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.cobblestone.full).build()));
 		}
 
 		// Traverse
