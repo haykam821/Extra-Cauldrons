@@ -54,6 +54,14 @@
 					"extracauldrons:mossy_basalt_brick_cauldron",
 					"extracauldrons:mossy_basalt_cobblestone_cauldron"
 				]
+			},
+			{
+				"when": {
+					"mod_loaded": "thehallow"
+				},
+				"values": [
+					"extracauldrons:tainted_stone_cauldron"
+				]
 			}
 		]
 	}
