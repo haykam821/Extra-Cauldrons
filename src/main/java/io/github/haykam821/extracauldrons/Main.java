@@ -82,6 +82,7 @@ public class Main implements ModInitializer {
 
 		// Terrestria
 		if (loader.isModLoaded("terrestria")) {
+			// Wood
 			registerFlammableCauldron("redwood", TerrestriaBlocks.REDWOOD.planks);
 			registerFlammableCauldron("hemlock", TerrestriaBlocks.HEMLOCK.planks);
 			registerFlammableCauldron("rubber", TerrestriaBlocks.RUBBER.planks);
@@ -90,6 +91,9 @@ public class Main implements ModInitializer {
 			registerFlammableCauldron("japanese_maple", TerrestriaBlocks.JAPANESE_MAPLE.planks);
 			registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
 			registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
+
+			// Basalt
+			registerSpecialCauldron("basalt", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.plain.full).build()));
 		}
 
 		// Traverse

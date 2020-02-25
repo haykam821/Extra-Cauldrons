@@ -39,5 +39,17 @@
 		"extracauldrons:stone_cauldron",
 		"extracauldrons:white_stained_glass_cauldron",
 		"extracauldrons:yellow_stained_glass_cauldron"
-	]
+	],
+	"libcd": {
+		"entries": [
+			{
+				"when": {
+					"mod_loaded": "terrestria"
+				},
+				"values": [
+					"extracauldrons:basalt_cauldron"
+				]
+			}
+		]
+	}
 }
