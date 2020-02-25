@@ -1,0 +1,13 @@
+{
+	"parent": "extracauldrons:block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "terrestria:block/basalt_bricks",
+		"bottom": "terrestria:block/basalt_bricks",
+		"side": "terrestria:block/basalt_bricks",
+		"inside": "terrestria:block/basalt_bricks"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
+}
