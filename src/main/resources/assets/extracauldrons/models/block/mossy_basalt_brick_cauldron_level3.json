@@ -1,0 +1,14 @@
+{
+	"parent": "block/cauldron_level3",
+	"textures": {
+		"particle": "#side",
+		"top": "terrestria:block/mossy_basalt_bricks",
+		"bottom": "terrestria:block/mossy_basalt_bricks",
+		"side": "terrestria:block/mossy_basalt_bricks",
+		"inside": "terrestria:block/mossy_basalt_bricks",
+		"water": "block/lava_still"
+	},
+	"when": {
+		"libcd:mod_loaded": "terrestria"
+	}
+}
