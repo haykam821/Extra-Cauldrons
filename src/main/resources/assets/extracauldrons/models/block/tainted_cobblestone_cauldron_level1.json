@@ -1,0 +1,13 @@
+{
+	"parent": "block/cauldron_level1",
+	"textures": {
+		"particle": "#side",
+		"top": "thehallow:block/tainted_cobblestone",
+		"bottom": "thehallow:block/tainted_cobblestone",
+		"side": "thehallow:block/tainted_cobblestone",
+		"inside": "thehallow:block/tainted_cobblestone"
+	},
+	"when": {
+		"libcd:mod_loaded": "thehallow"
+	}
+}

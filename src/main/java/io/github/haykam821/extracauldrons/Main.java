@@ -113,6 +113,7 @@ public class Main implements ModInitializer {
 
 			// Tainted stones
 			registerCauldron("tainted_stone", HallowedBlocks.TAINTED_STONE);
+			registerCauldron("tainted_cobblestone", HallowedBlocks.TAINTED_COBBLESTONE);
 		}
 	}
 
