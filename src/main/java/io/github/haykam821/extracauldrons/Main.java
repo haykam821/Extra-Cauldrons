@@ -109,6 +109,7 @@ public class Main implements ModInitializer {
 
 		// The Hallow
 		if (loader.isModLoaded("thehallow")) {
+			// Wood
 			registerFlammableCauldron("deadwood", HallowedBlocks.DEADWOOD_PLANKS);
 
 			// Tainted stones

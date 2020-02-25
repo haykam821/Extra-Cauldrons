@@ -61,6 +61,7 @@
 				},
 				"values": [
 					"extracauldrons:tainted_cobblestone_cauldron",
+					"extracauldrons:tainted_stone_brick_cauldron",
 					"extracauldrons:tainted_stone_cauldron"
 				]
 			}
