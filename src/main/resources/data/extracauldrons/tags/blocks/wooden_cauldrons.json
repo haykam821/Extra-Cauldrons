@@ -8,34 +8,38 @@
 		"extracauldrons:spruce_cauldron"
 	],
 	"libcd": {
-		"entries": [{
-			"when": {
-				"mod_loaded": "terrestria"
+		"entries": [
+			{
+				"when": {
+					"mod_loaded": "terrestria"
+				},
+				"values": [
+					"extracauldrons:cypress_cauldron",
+					"extracauldrons:hemlock_cauldron",
+					"extracauldrons:japanese_maple_cauldron",
+					"extracauldrons:rainbow_eucalyptus_cauldron",
+					"extracauldrons:redwood_cauldron",
+					"extracauldrons:rubber_cauldron",
+					"extracauldrons:sakura_cauldron",
+					"extracauldrons:willow_cauldron"
+				]
 			},
-			"values": [
-				"extracauldrons:cypress_cauldron",
-				"extracauldrons:hemlock_cauldron",
-				"extracauldrons:japanese_maple_cauldron",
-				"extracauldrons:rainbow_eucalyptus_cauldron",
-				"extracauldrons:redwood_cauldron",
-				"extracauldrons:rubber_cauldron",
-				"extracauldrons:sakura_cauldron",
-				"extracauldrons:willow_cauldron"
-			]
-		}, {
-			"when": {
-				"mod_loaded": "traverse"
+			{
+				"when": {
+					"mod_loaded": "thehallow"
+				},
+				"values": [
+					"extracauldrons:deadwood_cauldron"
+				]
 			},
-			"values": [
-				"extracauldrons:fir_cauldron"
-			]
-		}, {
-			"when": {
-				"mod_loaded": "thehallow"
-			},
-			"values": [
-				"extracauldrons:deadwood_cauldron"
-			]
-		}]
+			{
+				"when": {
+					"mod_loaded": "traverse"
+				},
+				"values": [
+					"extracauldrons:fir_cauldron"
+				]
+			}
+		]
 	}
 }
