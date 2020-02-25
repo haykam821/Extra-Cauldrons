@@ -159,6 +159,7 @@ public class Main implements ModInitializer {
 		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
 		registerSpecialCauldron("nether_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS).build()));
 		registerSpecialCauldron("red_nether_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.RED_NETHER_BRICKS).build()));
+		registerSpecialCauldron("end_stone_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.END_STONE_BRICKS).build()));
 
 		// Shulker
 		registerSpecialWaterCauldron("shulker", new ShulkerCauldronBlock(FabricBlockSettings.copy(Blocks.SHULKER_BOX).build()));

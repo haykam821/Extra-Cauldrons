@@ -1,0 +1,11 @@
+{
+	"parent": "block/cauldron_level3",
+	"textures": {
+		"particle": "#side",
+		"top": "block/end_stone_bricks",
+		"bottom": "block/end_stone_bricks",
+		"side": "block/end_stone_bricks",
+		"inside": "block/end_stone_bricks",
+		"water": "block/lava_still"
+	}
+}
