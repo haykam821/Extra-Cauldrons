@@ -1,0 +1,10 @@
+{
+	"parent": "extracauldrons:block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "block/purpur_block",
+		"bottom": "block/purpur_block",
+		"side": "block/purpur_block",
+		"inside": "block/purpur_block"
+	}
+}

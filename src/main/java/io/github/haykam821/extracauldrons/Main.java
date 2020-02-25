@@ -160,6 +160,7 @@ public class Main implements ModInitializer {
 		BLACK_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("black_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLACK, FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS).build()));
 
 		// Miscellaneous
+		registerCauldron("purpur", Blocks.PURPUR_BLOCK);
 		registerSpecialWaterCauldron("freezing", new FreezingCauldronBlock(FabricBlockSettings.copy(Blocks.BLUE_ICE).build()));
 		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
 		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
