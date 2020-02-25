@@ -1,0 +1,10 @@
+{
+	"parent": "extracauldrons:block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "block/mossy_stone_bricks",
+		"bottom": "block/mossy_stone_bricks",
+		"side": "block/mossy_stone_bricks",
+		"inside": "block/mossy_stone_bricks"
+	}
+}

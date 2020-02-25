@@ -120,6 +120,7 @@ public class Main implements ModInitializer {
 
 		// Stone bricks
 		registerCauldron("stone_brick", Blocks.STONE_BRICKS);
+		registerCauldron("mossy_stone_brick", Blocks.MOSSY_STONE_BRICKS);
 
 		// Wood
 		registerFlammableCauldron("oak", Blocks.OAK_PLANKS);
