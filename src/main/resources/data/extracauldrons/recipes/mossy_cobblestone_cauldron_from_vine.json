@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "extracauldrons:cobblestone_cauldron"
+		},
+		{
+			"item": "minecraft:vine"
+		}
+	],
+	"result": {
+		"item": "extracauldrons:mossy_cobblestone_cauldron"
+	}
+}

@@ -108,6 +108,7 @@ public class Main implements ModInitializer {
 		// Stones
 		registerCauldron("stone");
 		registerCauldron("cobblestone");
+		registerCauldron("mossy_cobblestone", Blocks.MOSSY_COBBLESTONE);
 
 		// Stone variants
 		registerCauldron("granite", Blocks.GRANITE);
