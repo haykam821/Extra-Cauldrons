@@ -142,6 +142,7 @@ public class Main implements ModInitializer {
 			registerSpecialCauldron("tungstensteel", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TUNGSTENSTEEL.block).build()));
 			registerSpecialCauldron("iridium", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.IRIDIUM.block).build()));
 			registerSpecialCauldron("chrome", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.CHROME.block).build()));
+			registerSpecialCauldron("titanium", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TITANIUM.block).build()));
 		}
 	}
 

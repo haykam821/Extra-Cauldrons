@@ -1,0 +1,10 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level3",
+	"textures": {
+		"all": "techreborn:block/storage/titanium_storage_block",
+		"water": "block/lava_still"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
