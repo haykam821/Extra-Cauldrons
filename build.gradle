@@ -28,6 +28,10 @@ repositories {
 		url = "http://maven.modmuss50.me/com/terraformersmc/terrestria/"
 	}
 	maven {
+		name = "Modmuss"
+		url = "http://maven.modmuss50.me/"
+	}
+	maven {
 		name = "Jitpack"
 		url = "https://jitpack.io"
 	}
@@ -49,9 +53,21 @@ dependencies {
 	include("io.github.cottonmc:LibCD:${project.libcd_version}")
 
 	// Mod integration
-	modCompileOnly("com.terraformersmc:terrestria:${project.terrestria_version}");
-	modCompileOnly("com.terraformersmc:traverse:${project.traverse_version}");
-	modCompile("com.github.fabric-community:the-hallow:${project.the_hallow_version}");
+	if (System.env.MOD_INTEGRATION) {
+		modCompile("com.terraformersmc:terrestria:${project.terrestria_version}");
+		modCompile("com.terraformersmc:traverse:${project.traverse_version}");
+		modCompile("com.github.fabric-community:the-hallow:${project.the_hallow_version}");
+		modCompile("TechReborn:TechReborn-1.15:${project.tech_reborn_version}") {
+			exclude group: "net.fabricmc"
+		};
+	} else {
+		modCompileOnly("com.terraformersmc:terrestria:${project.terrestria_version}");
+		modCompileOnly("com.terraformersmc:traverse:${project.traverse_version}");
+		modCompileOnly("com.github.fabric-community:the-hallow:${project.the_hallow_version}");
+		modCompile("TechReborn:TechReborn-1.15:${project.tech_reborn_version}") {
+			exclude group: "net.fabricmc"
+		};
+	}
 }
 
 processResources {

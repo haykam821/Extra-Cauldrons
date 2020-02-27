@@ -1,0 +1,13 @@
+{
+	"parent": "block/cauldron_level2",
+	"textures": {
+		"particle": "#side",
+		"top": "techreborn:block/rubber_planks",
+		"bottom": "techreborn:block/rubber_planks",
+		"side": "techreborn:block/rubber_planks",
+		"inside": "techreborn:block/rubber_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

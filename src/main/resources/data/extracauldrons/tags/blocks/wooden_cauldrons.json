@@ -11,6 +11,14 @@
 		"entries": [
 			{
 				"when": {
+					"mod_loaded": "techreborn"
+				},
+				"values": [
+					"extracauldrons:reborn_rubber_cauldron"
+				]
+			},
+			{
+				"when": {
 					"mod_loaded": "terrestria"
 				},
 				"values": [

@@ -19,6 +19,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import techreborn.init.TRContent;
 
 public class Main implements ModInitializer {
 	public static Block GLASS_CAULDRON;
@@ -115,6 +116,14 @@ public class Main implements ModInitializer {
 			// Tainted stones
 			registerCauldron("tainted_stone", HallowedBlocks.TAINTED_STONE);
 			registerCauldron("tainted_cobblestone", HallowedBlocks.TAINTED_COBBLESTONE);
+
+			// Tainted stone bricks
+			registerCauldron("tainted_stone_brick", HallowedBlocks.TAINTED_STONE_BRICKS);
+		}
+
+		// Tech Reborn
+		if (loader.isModLoaded("techreborn")) {
+			registerFlammableCauldron("reborn_rubber", TRContent.RUBBER_PLANKS);
 		}
 	}
 

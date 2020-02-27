@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/reborn_rubber_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
