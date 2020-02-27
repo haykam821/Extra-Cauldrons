@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "techreborn:chrome_ingot"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:chrome_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

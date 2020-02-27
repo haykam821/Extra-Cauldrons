@@ -48,6 +48,7 @@
 					"mod_loaded": "techreborn"
 				},
 				"values": [
+					"extracauldrons:chrome_cauldron",
 					"extracauldrons:iridium_cauldron",
 					"extracauldrons:peridot_cauldron",
 					"extracauldrons:red_garnet_cauldron",
