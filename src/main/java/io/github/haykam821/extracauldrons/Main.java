@@ -131,6 +131,7 @@ public class Main implements ModInitializer {
 			registerCauldron("peridot", StorageBlocks.PERIDOT.block);
 			registerCauldron("ruby", StorageBlocks.RUBY.block);
 			registerCauldron("sapphire", StorageBlocks.SAPPHIRE.block);
+			registerCauldron("red_garnet", StorageBlocks.RED_GARNET.block);
 		}
 	}
 
