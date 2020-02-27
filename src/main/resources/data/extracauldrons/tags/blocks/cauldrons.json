@@ -48,7 +48,8 @@
 					"mod_loaded": "techreborn"
 				},
 				"values": [
-					"extracauldrons:peridot_cauldron"
+					"extracauldrons:peridot_cauldron",
+					"extracauldrons:ruby_cauldron"
 				]
 			},
 			{
