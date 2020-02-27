@@ -1,10 +1,6 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "block/birch_planks",
-		"bottom": "block/birch_planks",
-		"side": "block/birch_planks",
-		"inside": "block/birch_planks"
+		"all": "block/birch_planks"
 	}
 }

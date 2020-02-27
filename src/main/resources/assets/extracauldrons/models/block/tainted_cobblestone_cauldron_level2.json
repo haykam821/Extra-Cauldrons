@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level2",
+	"parent": "extracauldrons:block/full_cauldron_level2",
 	"textures": {
-		"particle": "#side",
-		"top": "thehallow:block/tainted_cobblestone",
-		"bottom": "thehallow:block/tainted_cobblestone",
-		"side": "thehallow:block/tainted_cobblestone",
-		"inside": "thehallow:block/tainted_cobblestone"
+		"all": "thehallow:block/tainted_cobblestone"
 	},
 	"when": {
 		"libcd:mod_loaded": "thehallow"

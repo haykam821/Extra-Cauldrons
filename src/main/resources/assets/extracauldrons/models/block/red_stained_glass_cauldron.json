@@ -1,10 +1,6 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "block/red_stained_glass",
-		"bottom": "block/red_stained_glass",
-		"side": "block/red_stained_glass",
-		"inside": "block/red_stained_glass"
+		"all": "block/red_stained_glass"
 	}
 }

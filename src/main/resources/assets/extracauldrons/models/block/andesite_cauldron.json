@@ -1,10 +1,6 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "block/andesite",
-		"bottom": "block/andesite",
-		"side": "block/andesite",
-		"inside": "block/andesite"
+		"all": "block/andesite"
 	}
 }

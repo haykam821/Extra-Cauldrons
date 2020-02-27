@@ -1,10 +1,6 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "block/diorite",
-		"bottom": "block/diorite",
-		"side": "block/diorite",
-		"inside": "block/diorite"
+		"all": "block/diorite"
 	}
 }

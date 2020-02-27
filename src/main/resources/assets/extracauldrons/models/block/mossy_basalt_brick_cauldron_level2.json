@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level2",
+	"parent": "extracauldrons:block/full_cauldron_level2",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/mossy_basalt_bricks",
-		"bottom": "terrestria:block/mossy_basalt_bricks",
-		"side": "terrestria:block/mossy_basalt_bricks",
-		"inside": "terrestria:block/mossy_basalt_bricks",
+		"all": "terrestria:block/mossy_basalt_bricks",
 		"water": "block/lava_still"
 	},
 	"when": {

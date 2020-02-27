@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level1",
+	"parent": "extracauldrons:block/full_cauldron_level1",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/willow_planks",
-		"bottom": "terrestria:block/willow_planks",
-		"side": "terrestria:block/willow_planks",
-		"inside": "terrestria:block/willow_planks"
+		"all": "terrestria:block/willow_planks"
 	},
 	"when": {
 		"libcd:mod_loaded": "terrestria"

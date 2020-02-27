@@ -1,11 +1,7 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/mossy_basalt_bricks",
-		"bottom": "terrestria:block/mossy_basalt_bricks",
-		"side": "terrestria:block/mossy_basalt_bricks",
-		"inside": "terrestria:block/mossy_basalt_bricks"
+		"all": "terrestria:block/mossy_basalt_bricks"
 	},
 	"when": {
 		"libcd:mod_loaded": "terrestria"

@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level3",
+	"parent": "extracauldrons:block/full_cauldron_level3",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/sakura_planks",
-		"bottom": "terrestria:block/sakura_planks",
-		"side": "terrestria:block/sakura_planks",
-		"inside": "terrestria:block/sakura_planks"
+		"all": "terrestria:block/sakura_planks"
 	},
 	"when": {
 		"libcd:mod_loaded": "terrestria"

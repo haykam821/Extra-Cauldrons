@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level1",
+	"parent": "extracauldrons:block/full_cauldron_level1",
 	"textures": {
-		"particle": "#side",
-		"top": "block/nether_bricks",
-		"bottom": "block/nether_bricks",
-		"side": "block/nether_bricks",
-		"inside": "block/nether_bricks",
+		"all": "block/nether_bricks",
 		"water": "block/lava_still"
 	}
 }

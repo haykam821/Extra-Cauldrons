@@ -1,10 +1,6 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "block/shulker_box",
-		"bottom": "block/shulker_box",
-		"side": "block/shulker_box",
-		"inside": "block/shulker_box"
+		"all": "block/shulker_box"
 	}
 }

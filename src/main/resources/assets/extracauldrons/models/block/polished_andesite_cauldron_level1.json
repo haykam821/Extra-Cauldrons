@@ -1,10 +1,6 @@
 {
-	"parent": "block/cauldron_level1",
+	"parent": "extracauldrons:block/full_cauldron_level1",
 	"textures": {
-		"particle": "#side",
-		"top": "block/polished_andesite",
-		"bottom": "block/polished_andesite",
-		"side": "block/polished_andesite",
-		"inside": "block/polished_andesite"
+		"all": "block/polished_andesite"
 	}
 }

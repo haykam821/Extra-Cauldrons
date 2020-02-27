@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level2",
+	"parent": "extracauldrons:block/full_cauldron_level2",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/hemlock_planks",
-		"bottom": "terrestria:block/hemlock_planks",
-		"side": "terrestria:block/hemlock_planks",
-		"inside": "terrestria:block/hemlock_planks"
+		"all": "terrestria:block/hemlock_planks"
 	},
 	"when": {
 		"libcd:mod_loaded": "terrestria"

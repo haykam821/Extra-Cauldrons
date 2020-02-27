@@ -1,11 +1,7 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/basalt",
-		"bottom": "terrestria:block/basalt",
-		"side": "terrestria:block/basalt",
-		"inside": "terrestria:block/basalt"
+		"all": "terrestria:block/basalt"
 	},
 	"when": {
 		"libcd:mod_loaded": "terrestria"

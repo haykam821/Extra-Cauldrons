@@ -1,10 +1,6 @@
 {
-	"parent": "block/cauldron_level3",
+	"parent": "extracauldrons:block/full_cauldron_level3",
 	"textures": {
-		"particle": "#side",
-		"top": "block/diamond_block",
-		"bottom": "block/diamond_block",
-		"side": "block/diamond_block",
-		"inside": "block/diamond_block"
+		"all": "block/diamond_block"
 	}
 }

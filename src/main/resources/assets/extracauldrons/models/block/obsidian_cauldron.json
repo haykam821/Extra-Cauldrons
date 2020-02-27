@@ -1,10 +1,6 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "block/obsidian",
-		"bottom": "block/obsidian",
-		"side": "block/obsidian",
-		"inside": "block/obsidian"
+		"all": "block/obsidian"
 	}
 }

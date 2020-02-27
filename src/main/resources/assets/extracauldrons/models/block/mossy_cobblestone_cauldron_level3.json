@@ -1,10 +1,6 @@
 {
-	"parent": "block/cauldron_level3",
+	"parent": "extracauldrons:block/full_cauldron_level3",
 	"textures": {
-		"particle": "#side",
-		"top": "block/mossy_cobblestone",
-		"bottom": "block/mossy_cobblestone",
-		"side": "block/mossy_cobblestone",
-		"inside": "block/mossy_cobblestone"
+		"all": "block/mossy_cobblestone"
 	}
 }

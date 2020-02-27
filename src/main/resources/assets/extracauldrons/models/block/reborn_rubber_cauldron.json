@@ -1,11 +1,7 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "techreborn:block/rubber_planks",
-		"bottom": "techreborn:block/rubber_planks",
-		"side": "techreborn:block/rubber_planks",
-		"inside": "techreborn:block/rubber_planks"
+		"all": "techreborn:block/rubber_planks"
 	},
 	"when": {
 		"libcd:mod_loaded": "techreborn"

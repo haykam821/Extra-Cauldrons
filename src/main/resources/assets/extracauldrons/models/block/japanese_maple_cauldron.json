@@ -1,11 +1,7 @@
 {
-	"parent": "extracauldrons:block/cauldron",
+	"parent": "extracauldrons:block/full_cauldron",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/japanese_maple_planks",
-		"bottom": "terrestria:block/japanese_maple_planks",
-		"side": "terrestria:block/japanese_maple_planks",
-		"inside": "terrestria:block/japanese_maple_planks"
+		"all": "terrestria:block/japanese_maple_planks"
 	},
 	"when": {
 		"libcd:mod_loaded": "terrestria"

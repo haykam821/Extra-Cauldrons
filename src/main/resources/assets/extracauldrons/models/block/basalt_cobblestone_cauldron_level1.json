@@ -1,11 +1,7 @@
 {
-	"parent": "block/cauldron_level1",
+	"parent": "extracauldrons:block/full_cauldron_level1",
 	"textures": {
-		"particle": "#side",
-		"top": "terrestria:block/basalt_cobblestone",
-		"bottom": "terrestria:block/basalt_cobblestone",
-		"side": "terrestria:block/basalt_cobblestone",
-		"inside": "terrestria:block/basalt_cobblestone",
+		"all": "terrestria:block/basalt_cobblestone",
 		"water": "block/lava_still"
 	},
 	"when": {
