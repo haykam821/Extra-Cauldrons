@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "techreborn:peridot_gem"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:peridot_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/peridot_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

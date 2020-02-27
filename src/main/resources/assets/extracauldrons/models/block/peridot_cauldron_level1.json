@@ -1,0 +1,13 @@
+{
+	"parent": "block/cauldron_level1",
+	"textures": {
+		"particle": "#side",
+		"top": "techreborn:block/storage/peridot_storage_block",
+		"bottom": "techreborn:block/storage/peridot_storage_block",
+		"side": "techreborn:block/storage/peridot_storage_block",
+		"inside": "techreborn:block/storage/peridot_storage_block"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

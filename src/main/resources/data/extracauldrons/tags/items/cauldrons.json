@@ -45,6 +45,14 @@
 		"entries": [
 			{
 				"when": {
+					"mod_loaded": "techreborn"
+				},
+				"values": [
+					"extracauldrons:peridot_cauldron"
+				]
+			},
+			{
+				"when": {
 					"mod_loaded": "terrestria"
 				},
 				"values": [

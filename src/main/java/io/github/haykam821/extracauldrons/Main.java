@@ -20,6 +20,7 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import techreborn.init.TRContent;
+import techreborn.init.TRContent.StorageBlocks;
 
 public class Main implements ModInitializer {
 	public static Block GLASS_CAULDRON;
@@ -123,7 +124,11 @@ public class Main implements ModInitializer {
 
 		// Tech Reborn
 		if (loader.isModLoaded("techreborn")) {
+			// Wood
 			registerFlammableCauldron("reborn_rubber", TRContent.RUBBER_PLANKS);
+
+			// Storage blocks
+			registerCauldron("peridot", StorageBlocks.PERIDOT.block);
 		}
 	}
 
