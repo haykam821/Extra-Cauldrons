@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "techreborn:tungstensteel_ingot"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:tungstensteel_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
