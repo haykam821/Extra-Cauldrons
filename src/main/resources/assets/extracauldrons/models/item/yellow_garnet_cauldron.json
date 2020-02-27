@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/yellow_garnet_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
