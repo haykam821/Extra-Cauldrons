@@ -127,12 +127,15 @@ public class Main implements ModInitializer {
 			// Wood
 			registerFlammableCauldron("reborn_rubber", TRContent.RUBBER_PLANKS);
 
-			// Storage blocks
+			// Gem storage blocks
 			registerCauldron("peridot", StorageBlocks.PERIDOT.block);
 			registerCauldron("ruby", StorageBlocks.RUBY.block);
 			registerCauldron("sapphire", StorageBlocks.SAPPHIRE.block);
 			registerCauldron("red_garnet", StorageBlocks.RED_GARNET.block);
 			registerCauldron("yellow_garnet", StorageBlocks.YELLOW_GARNET.block);
+
+			// Refractory metal storage blocks
+			registerSpecialCauldron("tungsten", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TUNGSTEN.block).build()));
 		}
 	}
 

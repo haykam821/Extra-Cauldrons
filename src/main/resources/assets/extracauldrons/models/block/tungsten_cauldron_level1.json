@@ -1,0 +1,10 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level1",
+	"textures": {
+		"all": "techreborn:block/storage/tungsten_storage_block",
+		"water": "block/lava_still"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
