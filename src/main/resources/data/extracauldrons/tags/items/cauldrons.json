@@ -53,6 +53,14 @@
 		"entries": [
 			{
 				"when": {
+					"libcd:mod_loaded": "noncorrelatedextras"
+				},
+				"values": [
+					"extracauldrons:polarized_iron_cauldron"
+				]
+			},
+			{
+				"when": {
 					"libcd:mod_loaded": "techreborn"
 				},
 				"values": [

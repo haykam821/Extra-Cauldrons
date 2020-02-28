@@ -159,6 +159,11 @@ public class Main implements ModInitializer {
 			registerSpecialCauldron("chrome", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.CHROME.block).build()));
 			registerSpecialCauldron("titanium", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TITANIUM.block).build()));
 		}
+
+		// NonCorrelatedExtras
+		if (loader.isModLoaded("noncorrelatedextras")) {
+			registerCauldron("polarized_iron", Registry.BLOCK.get(new Identifier("noncorrelatedextras", "polarized_iron_block")));
+		}
 	}
 
 	@Override

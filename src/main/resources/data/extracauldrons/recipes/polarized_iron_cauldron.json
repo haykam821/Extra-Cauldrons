@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "noncorrelatedextras:polarized_iron_ingot"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:polarized_iron_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "noncorrelatedextras"
+	}
+}

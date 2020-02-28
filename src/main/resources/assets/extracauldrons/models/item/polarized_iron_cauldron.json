@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/polarized_iron_cauldron",
+	"when": {
+		"libcd:mod_loaded": "noncorrelatedextras"
+	}
+}
