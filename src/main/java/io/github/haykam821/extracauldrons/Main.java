@@ -21,6 +21,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import techreborn.init.TRContent;
 import techreborn.init.TRContent.StorageBlocks;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 
 public class Main implements ModInitializer {
 	public static Block GLASS_CAULDRON;
@@ -206,6 +207,9 @@ public class Main implements ModInitializer {
 		GREEN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("green_stained_glass", new StainedGlassCauldronBlock(DyeColor.GREEN, FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS).build()));
 		RED_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("red_stained_glass", new StainedGlassCauldronBlock(DyeColor.RED, FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS).build()));
 		BLACK_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("black_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLACK, FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS).build()));
+
+		// Coal
+		FuelRegistry.INSTANCE.add(registerCauldron("coal", Blocks.COAL_BLOCK), 6400);
 
 		// Miscellaneous
 		registerCauldron("purpur", Blocks.PURPUR_BLOCK);
