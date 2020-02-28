@@ -1,0 +1,10 @@
+{
+	"parent": "block/cauldron_level3",
+	"textures": {
+		"particle": "#side",
+		"top": "block/quartz_block_top",
+		"bottom": "block/quartz_block_bottom",
+		"side": "block/quartz_block_top",
+		"inside": "block/quartz_block_bottom"
+	}
+}
