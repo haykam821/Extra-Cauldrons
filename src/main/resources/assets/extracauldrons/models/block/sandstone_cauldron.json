@@ -1,0 +1,10 @@
+{
+	"parent": "extracauldrons:block/cauldron",
+	"textures": {
+		"particle": "#side",
+		"top": "block/sandstone_top",
+		"bottom": "block/sandstone_bottom",
+		"side": "block/sandstone_top",
+		"inside": "block/sandstone_bottom"
+	}
+}
