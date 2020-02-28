@@ -171,6 +171,7 @@ public class Main implements ModInitializer {
 
 		// Sandstone
 		registerCauldron("sandstone", Blocks.SANDSTONE);
+		registerCauldron("red_sandstone", Blocks.RED_SANDSTONE);
 
 		// Wood
 		registerFlammableCauldron("oak", Blocks.OAK_PLANKS);
