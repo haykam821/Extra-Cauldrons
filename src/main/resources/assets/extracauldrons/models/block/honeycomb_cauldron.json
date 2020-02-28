@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/full_cauldron",
+	"textures": {
+		"all": "block/honeycomb_block"
+	}
+}

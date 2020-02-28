@@ -202,6 +202,7 @@ public class Main implements ModInitializer {
 
 		// Miscellaneous
 		registerCauldron("purpur", Blocks.PURPUR_BLOCK);
+		registerCauldron("honeycomb", Blocks.HONEYCOMB_BLOCK);
 		registerSpecialWaterCauldron("freezing", new FreezingCauldronBlock(FabricBlockSettings.copy(Blocks.BLUE_ICE).build()));
 		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
 		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
