@@ -190,6 +190,7 @@ public class Main implements ModInitializer {
 		// Metals and gems
 		registerSpecialCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));
 		registerCauldron("diamond", Blocks.DIAMOND_BLOCK);
+		registerCauldron("emerald", Blocks.EMERALD_BLOCK);
 
 		// Glass
 		GLASS_CAULDRON = registerSpecialWaterCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
