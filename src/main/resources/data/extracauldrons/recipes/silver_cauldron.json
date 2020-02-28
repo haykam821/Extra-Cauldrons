@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "techreborn:silver_ingot"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:silver_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
