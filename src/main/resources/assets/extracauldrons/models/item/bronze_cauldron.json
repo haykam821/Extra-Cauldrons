@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/bronze_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

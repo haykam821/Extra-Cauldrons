@@ -147,6 +147,7 @@ public class Main implements ModInitializer {
 			registerCauldron("zinc", StorageBlocks.ZINC.block);
 			registerCauldron("aluminum", StorageBlocks.ALUMINUM.block);
 			registerCauldron("brass", StorageBlocks.BRASS.block);
+			registerCauldron("bronze", StorageBlocks.BRONZE.block);
 
 			// Refractory metal storage blocks
 			registerSpecialCauldron("tungsten", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TUNGSTEN.block).build()));
