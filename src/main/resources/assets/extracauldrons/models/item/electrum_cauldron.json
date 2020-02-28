@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/electrum_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
