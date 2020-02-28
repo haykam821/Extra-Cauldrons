@@ -124,6 +124,9 @@ public class Main implements ModInitializer {
 
 			// Glass
 			SOUL_GLASS_CAULDRON = registerSpecialWaterCauldron("soul_glass", new GlassCauldronBlock(FabricBlockSettings.copy(HallowedBlocks.SOUL_GLASS).build()));
+
+			// Sandstone
+			registerCauldron("tainted_sandstone", HallowedBlocks.TAINTED_SANDSTONE);
 		}
 
 		// Tech Reborn

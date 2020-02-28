@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/tainted_sandstone_cauldron",
+	"when": {
+		"libcd:mod_loaded": "thehallow"
+	}
+}
