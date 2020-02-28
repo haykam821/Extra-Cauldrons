@@ -11,7 +11,7 @@
 		"entries": [
 			{
 				"when": {
-					"mod_loaded": "techreborn"
+					"libcd:mod_loaded": "techreborn"
 				},
 				"values": [
 					"extracauldrons:reborn_rubber_cauldron"
@@ -19,7 +19,7 @@
 			},
 			{
 				"when": {
-					"mod_loaded": "terrestria"
+					"libcd:mod_loaded": "terrestria"
 				},
 				"values": [
 					"extracauldrons:cypress_cauldron",
@@ -34,7 +34,7 @@
 			},
 			{
 				"when": {
-					"mod_loaded": "thehallow"
+					"libcd:mod_loaded": "thehallow"
 				},
 				"values": [
 					"extracauldrons:deadwood_cauldron"
@@ -42,7 +42,7 @@
 			},
 			{
 				"when": {
-					"mod_loaded": "traverse"
+					"libcd:mod_loaded": "traverse"
 				},
 				"values": [
 					"extracauldrons:fir_cauldron"

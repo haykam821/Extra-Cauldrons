@@ -53,7 +53,7 @@
 		"entries": [
 			{
 				"when": {
-					"mod_loaded": "techreborn"
+					"libcd:mod_loaded": "techreborn"
 				},
 				"values": [
 					"extracauldrons:aluminum_cauldron",
@@ -75,7 +75,7 @@
 			},
 			{
 				"when": {
-					"mod_loaded": "terrestria"
+					"libcd:mod_loaded": "terrestria"
 				},
 				"values": [
 					"extracauldrons:basalt_brick_cauldron",
@@ -87,7 +87,7 @@
 			},
 			{
 				"when": {
-					"mod_loaded": "thehallow"
+					"libcd:mod_loaded": "thehallow"
 				},
 				"values": [
 					"extracauldrons:soul_glass_cauldron",
