@@ -7,6 +7,8 @@ import com.terraformersmc.traverse.block.TraverseBlocks;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -21,7 +23,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import techreborn.init.TRContent;
 import techreborn.init.TRContent.StorageBlocks;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 
 public class Main implements ModInitializer {
 	public static Block GLASS_CAULDRON;
@@ -184,6 +185,7 @@ public class Main implements ModInitializer {
 		registerFlammableCauldron("jungle", Blocks.JUNGLE_PLANKS);
 		registerFlammableCauldron("acacia", Blocks.ACACIA_PLANKS);
 		registerFlammableCauldron("dark_oak", Blocks.DARK_OAK_PLANKS);
+		FuelRegistry.INSTANCE.add(TagRegistry.item(new Identifier("extracauldrons", "wooden_cauldrons")), 300);
 
 		// Metals and gems
 		registerSpecialCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));
