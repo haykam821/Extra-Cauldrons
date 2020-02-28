@@ -1,0 +1,13 @@
+{
+	"parent": "extracauldrons:block/transparent_cauldron_level3",
+	"textures": {
+		"particle": "#side",
+		"top": "thehallow:block/soul_glass",
+		"bottom": "thehallow:block/soul_glass",
+		"side": "thehallow:block/soul_glass",
+		"inside": "thehallow:block/soul_glass"
+	},
+	"when": {
+		"libcd:mod_loaded": "thehallow"
+	}
+}

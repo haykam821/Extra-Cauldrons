@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/soul_glass_cauldron",
+	"when": {
+		"libcd:mod_loaded": "thehallow"
+	}
+}

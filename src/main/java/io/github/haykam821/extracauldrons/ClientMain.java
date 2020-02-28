@@ -2,6 +2,7 @@ package io.github.haykam821.extracauldrons;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.RenderLayer;
 
 public class ClientMain implements ClientModInitializer {
@@ -27,5 +28,13 @@ public class ClientMain implements ClientModInitializer {
 			Main.RED_STAINED_GLASS_CAULDRON,
 			Main.BLACK_STAINED_GLASS_CAULDRON
 		);
+
+		FabricLoader loader = FabricLoader.getInstance();
+		if (loader.isModLoaded("thehallow")) {
+			BlockRenderLayerMap.INSTANCE.putBlocks(
+				RenderLayer.getTranslucent(),
+				Main.SOUL_GLASS_CAULDRON
+			);
+		}
 	}
 }

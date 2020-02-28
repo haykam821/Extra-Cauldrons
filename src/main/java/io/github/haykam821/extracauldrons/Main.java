@@ -40,6 +40,7 @@ public class Main implements ModInitializer {
 	public static Block GREEN_STAINED_GLASS_CAULDRON;
 	public static Block RED_STAINED_GLASS_CAULDRON;
 	public static Block BLACK_STAINED_GLASS_CAULDRON;
+	public static Block SOUL_GLASS_CAULDRON;
 
 	public Block registerSpecialCauldron(String type, Block block) {
 		Identifier identifier = new Identifier("extracauldrons", type + "_cauldron");
@@ -120,6 +121,9 @@ public class Main implements ModInitializer {
 
 			// Tainted stone bricks
 			registerCauldron("tainted_stone_brick", HallowedBlocks.TAINTED_STONE_BRICKS);
+
+			// Glass
+			SOUL_GLASS_CAULDRON = registerSpecialWaterCauldron("soul_glass", new GlassCauldronBlock(FabricBlockSettings.copy(HallowedBlocks.SOUL_GLASS).build()));
 		}
 
 		// Tech Reborn
