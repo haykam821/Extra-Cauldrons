@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron",
+	"textures": {
+		"all": "techreborn:block/storage/copper_storage_block"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}

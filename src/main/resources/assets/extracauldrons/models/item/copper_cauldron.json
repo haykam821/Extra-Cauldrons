@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/copper_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
