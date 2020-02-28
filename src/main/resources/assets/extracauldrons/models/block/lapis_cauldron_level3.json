@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level3",
+	"textures": {
+		"all": "block/lapis_block"
+	}
+}
