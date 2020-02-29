@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/invar_cauldron",
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
