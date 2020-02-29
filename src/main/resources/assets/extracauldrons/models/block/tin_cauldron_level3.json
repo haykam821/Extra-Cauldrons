@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level3",
+	"textures": {
+		"all": "techreborn:block/storage/tin_storage_block"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
