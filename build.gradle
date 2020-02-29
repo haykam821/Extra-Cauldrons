@@ -61,6 +61,7 @@ dependencies {
 			exclude group: "net.fabricmc"
 		};
 		modCompile("curse.maven:noncorrelatedextras:2888076");
+		modCompile("curse.maven:adabranium:2877863");
 	} else {
 		modCompileOnly("com.terraformersmc:terrestria:${project.terrestria_version}");
 		modCompileOnly("com.terraformersmc:traverse:${project.traverse_version}");
@@ -69,6 +70,7 @@ dependencies {
 			exclude group: "net.fabricmc"
 		};
 		modCompileOnly("curse.maven:noncorrelatedextras:2888076");
+		modCompileOnly("curse.maven:adabranium:2877863");
 	}
 }
 

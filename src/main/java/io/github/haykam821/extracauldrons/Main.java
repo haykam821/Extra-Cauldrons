@@ -1,5 +1,6 @@
 package io.github.haykam821.extracauldrons;
 
+import com.brand.adabraniummod.content.ModBlocks;
 import com.fabriccommunity.thehallow.registry.HallowedBlocks;
 import com.terraformersmc.terrestria.init.TerrestriaBlocks;
 import com.terraformersmc.traverse.block.TraverseBlocks;
@@ -170,6 +171,11 @@ public class Main implements ModInitializer {
 		// NonCorrelatedExtras
 		if (loader.isModLoaded("noncorrelatedextras")) {
 			registerCauldron("polarized_iron", Registry.BLOCK.get(new Identifier("noncorrelatedextras", "polarized_iron_block")));
+		}
+		
+		// Adabranium
+		if (loader.isModLoaded("adabraniummod")) {
+			registerCauldron("vibranium", ModBlocks.VIBRANIUM_BLOCK);
 		}
 	}
 
