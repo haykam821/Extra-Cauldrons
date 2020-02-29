@@ -176,6 +176,7 @@ public class Main implements ModInitializer {
 		// Adabranium
 		if (loader.isModLoaded("adabraniummod")) {
 			registerCauldron("vibranium", ModBlocks.VIBRANIUM_BLOCK);
+			registerCauldron("adamantium", ModBlocks.ADAMANTIUM_BLOCK);
 		}
 	}
 
