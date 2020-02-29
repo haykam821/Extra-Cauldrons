@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "techreborn:lead_ingot"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:lead_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "techreborn"
+	}
+}
