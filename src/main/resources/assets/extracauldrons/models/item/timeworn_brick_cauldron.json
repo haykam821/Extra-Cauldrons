@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/timeworn_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "cornflower"
+	}
+}

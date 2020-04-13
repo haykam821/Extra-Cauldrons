@@ -1,0 +1,17 @@
+{
+	"type": "cornflower:cauldron",
+	"items": [
+		{
+			"item": "cornflower:cornflower_essence"
+		},
+		{
+			"item": "extracauldrons:brick_cauldron"
+		}
+	],
+	"result": {
+		"item": "extracauldrons:timeworn_brick_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "cornflower"
+	}
+}

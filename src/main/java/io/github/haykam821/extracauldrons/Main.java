@@ -20,6 +20,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.DyeColor;
+import io.github.cornflower.block.CornflowerBlocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import techreborn.init.TRContent;
@@ -177,6 +178,10 @@ public class Main implements ModInitializer {
 		if (loader.isModLoaded("adabraniummod")) {
 			registerCauldron("vibranium", ModBlocks.VIBRANIUM_BLOCK);
 			registerCauldron("adamantium", ModBlocks.ADAMANTIUM_BLOCK);
+		}
+
+		if (loader.isModLoaded("cornflower")) {
+			registerCauldron("timeworn_brick", CornflowerBlocks.TIMEWORN_BRICK);
 		}
 	}
 

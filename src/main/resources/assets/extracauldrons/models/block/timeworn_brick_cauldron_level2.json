@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level2",
+	"textures": {
+		"all": "cornflower:block/timeworn_brick"
+	},
+	"when": {
+		"libcd:mod_loaded": "cornflower"
+	}
+}
