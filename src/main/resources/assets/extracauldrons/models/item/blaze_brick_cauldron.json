@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/blaze_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
