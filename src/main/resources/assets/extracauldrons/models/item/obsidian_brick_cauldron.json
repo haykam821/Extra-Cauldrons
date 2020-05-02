@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/obsidian_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
