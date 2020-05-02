@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/polished_netherrack_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

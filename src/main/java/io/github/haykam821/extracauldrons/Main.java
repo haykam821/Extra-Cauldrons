@@ -220,6 +220,9 @@ public class Main implements ModInitializer {
 
 			// Sandstone
 			registerCauldron("soul_sandstone", new Identifier("blockus", "soul_sandstone"));
+
+			// Polished
+			registerLavaCauldron("polished_netherrack", new Identifier("blockus", "polished_netherrack"));
 		}
 	}
 

@@ -65,6 +65,7 @@
 					"libcd:mod_loaded": "blockus"
 				},
 				"values": [
+					"extracauldrons:polished_netherrack_cauldron",
 					"extracauldrons:soul_sandstone_cauldron"
 				]
 			},
