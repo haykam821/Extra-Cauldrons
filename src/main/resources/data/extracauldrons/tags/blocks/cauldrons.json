@@ -62,6 +62,14 @@
 			},
 			{
 				"when": {
+					"libcd:mod_loaded": "blockus"
+				},
+				"values": [
+					"extracauldrons:soul_sandstone_cauldron"
+				]
+			},
+			{
+				"when": {
 					"libcd:mod_loaded": "cornflower"
 				},
 				"values": [

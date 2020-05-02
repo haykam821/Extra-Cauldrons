@@ -1,0 +1,13 @@
+{
+	"parent": "block/cauldron_level1",
+	"textures": {
+		"particle": "#side",
+		"top": "blockus:block/soul_sandstone_top",
+		"bottom": "blockus:block/soul_sandstone_bottom",
+		"side": "blockus:block/soul_sandstone_top",
+		"inside": "blockus:block/soul_sandstone_bottom"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
