@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "blockus:magma_bricks"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:magma_brick_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
