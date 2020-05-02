@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron",
+	"textures": {
+		"all": "blockus:block/red_sandstone_bricks"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

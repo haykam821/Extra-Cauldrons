@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/red_sandstone_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
