@@ -231,6 +231,7 @@ public class Main implements ModInitializer {
 
 			// Brick
 			registerCauldron("andesite_brick", new Identifier("blockus", "andesite_bricks"));
+			registerCauldron("diorite_brick", new Identifier("blockus", "diorite_bricks"));
 			registerCauldron("honeycomb_brick", new Identifier("blockus", "honeycomb_bricks"));
 
 			// Stained stone brick
