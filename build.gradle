@@ -1,5 +1,5 @@
 plugins {
-	id "fabric-loom" version "0.2.6-SNAPSHOT"
+	id "fabric-loom" version "0.2.7-SNAPSHOT"
 	id "maven-publish"
 	id "com.wynprice.cursemaven" version "2.1.0"
 }
@@ -21,7 +21,7 @@ repositories {
 	}
 	maven {
 		name = "Cotton"
-		url = "http://server.bbkr.space:8081/artifactory/libs-release/"
+		url = "https://server.bbkr.space/artifactory/libs-release/"
 	}
 	maven {
 		name = "TerraformersMC"
@@ -56,7 +56,7 @@ dependencies {
 	if (System.env.MOD_INTEGRATION) {
 		modCompile("com.terraformersmc:terrestria:${project.terrestria_version}");
 		modCompile("com.terraformersmc:traverse:${project.traverse_version}");
-		modCompile("com.github.fabric-community:the-hallow:${project.the_hallow_version}");
+		//modCompile("com.github.fabric-community:the-hallow:${project.the_hallow_version}");
 		modCompile("TechReborn:TechReborn-1.15:${project.tech_reborn_version}") {
 			exclude group: "net.fabricmc"
 		};

@@ -1,32 +1,39 @@
 package io.github.haykam821.extracauldrons;
 
-import com.brand.adabraniummod.content.ModBlocks;
-import com.fabriccommunity.thehallow.registry.HallowedBlocks;
-import com.terraformersmc.terrestria.init.TerrestriaBlocks;
-import com.terraformersmc.traverse.block.TraverseBlocks;
+import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import io.github.cornflower.block.CornflowerBlocks;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CauldronBlock;
-import net.minecraft.block.FireBlock;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.DyeColor;
-import io.github.cornflower.block.CornflowerBlocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import techreborn.init.TRContent;
-import techreborn.init.TRContent.StorageBlocks;
 
 public class Main implements ModInitializer {
+	public static final String MOD_ID = "extracauldrons";
+	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+
+	public static final Identifier WOODEN_CAULDRONS_ID = new Identifier(MOD_ID, "wooden_cauldrons");
+	public static final Tag<Block> WOODEN_CAULDRON_BLOCKS = TagRegistry.block(WOODEN_CAULDRONS_ID);
+	public static final Tag<Item> WOODEN_CAULDRON_ITEMS = TagRegistry.item(WOODEN_CAULDRONS_ID);
+
 	public static Block GLASS_CAULDRON;
 	public static Block WHITE_STAINED_GLASS_CAULDRON;
 	public static Block ORANGE_STAINED_GLASS_CAULDRON;
@@ -46,42 +53,61 @@ public class Main implements ModInitializer {
 	public static Block BLACK_STAINED_GLASS_CAULDRON;
 	public static Block SOUL_GLASS_CAULDRON;
 
-	public Block registerSpecialCauldron(String type, Block block) {
-		Identifier identifier = new Identifier("extracauldrons", type + "_cauldron");
+	public Block registerCauldron(String type, CauldronBlock block) {
+		Identifier identifier = new Identifier(MOD_ID, type + "_cauldron");
 
+		// Register
 		Registry.register(Registry.BLOCK, identifier, block);
 		Registry.register(Registry.ITEM, identifier, new BlockItem(block, new Item.Settings().group(ItemGroup.BREWING)));
 
-		return block;
-	}
-
-	public Block registerSpecialWaterCauldron(String type, Block block) {
-		registerSpecialCauldron(type, block);
-		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
-			if (view == null || pos == null)
-				return -1;
-			return BiomeColors.getWaterColor(view, pos);
-		}, block);
+		// Add color provider
+		if (!(block instanceof LavaCauldronBlock)) {
+			ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
+				if (view == null || pos == null)
+					return -1;
+				return BiomeColors.getWaterColor(view, pos);
+			}, block);
+		}
 
 		return block;
 	}
 
 	public Block registerCauldron(String type, Block base) {
-		return registerSpecialWaterCauldron(type, new CauldronBlock(FabricBlockSettings.copy(base).build()));
+		return this.registerCauldron(type, new CauldronBlock(FabricBlockSettings.copy(base).build()));
 	}
 
-	public Block registerCauldron(String type) {
-		return registerCauldron(type, Blocks.CAULDRON);
+	public Block registerLavaCauldron(String type, Block base) {
+		return this.registerCauldron(type, new LavaCauldronBlock(FabricBlockSettings.copy(base).build()));
 	}
 
-	public Block registerFlammableCauldron(String type, Block base) {
-		Block block = registerCauldron(type, base);
-		((FireBlock) Blocks.FIRE).registerFlammableBlock(block, 5, 20);
-		return block;
+	public Block registerCauldron(String type, Identifier baseID) {
+		Optional<Block> base = Registry.BLOCK.getOrEmpty(baseID);
+		if (base.isPresent()) {
+			return this.registerCauldron(type, base.get());
+		}
+
+		LOGGER.debug("Missing the base block '{}' for cauldron of type '{}' (perhaps it will be registered after)", baseID, type);
+		RegistryEntryAddedCallback.event(Registry.BLOCK).register((rawID, id, addedBase) -> {
+			if (id.equals(baseID)) {
+				this.registerCauldron(type, addedBase);
+			}
+		});
+		return null;
 	}
 
-	public Block registerFlammableCauldron(String type) {
-		return registerFlammableCauldron(type, Blocks.CAULDRON);
+	public Block registerLavaCauldron(String type, Identifier baseID) {
+		Optional<Block> base = Registry.BLOCK.getOrEmpty(baseID);
+		if (base.isPresent()) {
+			return this.registerLavaCauldron(type, base.get());
+		}
+
+		LOGGER.debug("Missing the base block '{}' for lava cauldron of type '{}' (perhaps it will be registered after)", baseID, type);
+		RegistryEntryAddedCallback.event(Registry.BLOCK).register((rawID, id, addedBase) -> {
+			if (id.equals(baseID)) {
+				this.registerLavaCauldron(type, addedBase);
+			}
+		});
+		return null;
 	}
 
 	public void registerModIntergationCauldrons() {
@@ -90,94 +116,94 @@ public class Main implements ModInitializer {
 		// Terrestria
 		if (loader.isModLoaded("terrestria")) {
 			// Wood
-			registerFlammableCauldron("redwood", TerrestriaBlocks.REDWOOD.planks);
-			registerFlammableCauldron("hemlock", TerrestriaBlocks.HEMLOCK.planks);
-			registerFlammableCauldron("rubber", TerrestriaBlocks.RUBBER.planks);
-			registerFlammableCauldron("cypress", TerrestriaBlocks.CYPRESS.planks);
-			registerFlammableCauldron("willow", TerrestriaBlocks.WILLOW.planks);
-			registerFlammableCauldron("japanese_maple", TerrestriaBlocks.JAPANESE_MAPLE.planks);
-			registerFlammableCauldron("rainbow_eucalyptus", TerrestriaBlocks.RAINBOW_EUCALYPTUS.planks);
-			registerFlammableCauldron("sakura", TerrestriaBlocks.SAKURA.planks);
+			registerCauldron("redwood", new Identifier("terrestria", "redwood"));
+			registerCauldron("hemlock", new Identifier("terrestria", "hemlock"));
+			registerCauldron("rubber", new Identifier("terrestria", "rubber"));
+			registerCauldron("cypress", new Identifier("terrestria", "cypress"));
+			registerCauldron("willow", new Identifier("terrestria", "willow"));
+			registerCauldron("japanese_maple", new Identifier("terrestria", "japanese_maple"));
+			registerCauldron("rainbow_eucalyptus", new Identifier("terrestria", "rainbow_eucalyptus"));
+			registerCauldron("sakura", new Identifier("terrestria", "sakura"));
 
 			// Basalt stones
-			registerSpecialCauldron("basalt", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.plain.full).build()));
-			registerSpecialCauldron("basalt_cobblestone", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.cobblestone.full).build()));
-			registerSpecialCauldron("mossy_basalt_cobblestone", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.mossyCobblestone.full).build()));
+			registerLavaCauldron("basalt", new Identifier("terrestria", "basalt"));
+			registerLavaCauldron("basalt_cobblestone", new Identifier("terrestria", "basalt_cobblestone"));
+			registerLavaCauldron("mossy_basalt_cobblestone", new Identifier("terrestria", "mossy_basalt_cobblestone"));
 
 			// Basalt bricks
-			registerSpecialCauldron("basalt_brick", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.bricks.full).build()));
-			registerSpecialCauldron("mossy_basalt_brick", new LavaCauldronBlock(FabricBlockSettings.copy(TerrestriaBlocks.BASALT.mossyBricks.full).build()));
+			registerLavaCauldron("basalt_brick", new Identifier("terrestria", "basalt_bricks"));
+			registerLavaCauldron("mossy_basalt_brick", new Identifier("terrestria", "mossy_basalt_bricks"));
 		}
 
 		// Traverse
 		if (loader.isModLoaded("traverse")) {
-			registerFlammableCauldron("fir", TraverseBlocks.FIR_PLANKS);
+			registerCauldron("fir", new Identifier("traverse", "fir_planks"));
 		}
 
 		// The Hallow
 		if (loader.isModLoaded("thehallow")) {
 			// Wood
-			registerFlammableCauldron("deadwood", HallowedBlocks.DEADWOOD_PLANKS);
+			registerCauldron("deadwood", new Identifier("thehallow", "deadwood_planks"));
 
 			// Tainted stones
-			registerCauldron("tainted_stone", HallowedBlocks.TAINTED_STONE);
-			registerCauldron("tainted_cobblestone", HallowedBlocks.TAINTED_COBBLESTONE);
+			registerCauldron("tainted_stone", new Identifier("thehallow", "tainted_stone"));
+			registerCauldron("tainted_cobblestone", new Identifier("thehallow", "tainted_cobblestone"));
 
 			// Tainted stone bricks
-			registerCauldron("tainted_stone_brick", HallowedBlocks.TAINTED_STONE_BRICKS);
+			registerCauldron("tainted_stone_brick", new Identifier("thehallow", "tainted_stone_bricks"));
 
 			// Glass
-			SOUL_GLASS_CAULDRON = registerSpecialWaterCauldron("soul_glass", new GlassCauldronBlock(FabricBlockSettings.copy(HallowedBlocks.SOUL_GLASS).build()));
+			SOUL_GLASS_CAULDRON = registerCauldron("soul_glass", new GlassCauldronBlock(FabricBlockSettings.copy(Registry.BLOCK.get(new Identifier("thehallow", "soul_glass"))).build()));
 
 			// Sandstone
-			registerCauldron("tainted_sandstone", HallowedBlocks.TAINTED_SANDSTONE);
+			registerCauldron("tainted_sandstone", new Identifier("thehallow", "tainted_sandstone"));
 		}
 
 		// Tech Reborn
 		if (loader.isModLoaded("techreborn")) {
 			// Wood
-			registerFlammableCauldron("reborn_rubber", TRContent.RUBBER_PLANKS);
+			registerCauldron("reborn_rubber", new Identifier("techreborn", "rubber_planks"));
 
 			// Gem storage blocks
-			registerCauldron("peridot", StorageBlocks.PERIDOT.block);
-			registerCauldron("ruby", StorageBlocks.RUBY.block);
-			registerCauldron("sapphire", StorageBlocks.SAPPHIRE.block);
-			registerCauldron("red_garnet", StorageBlocks.RED_GARNET.block);
-			registerCauldron("yellow_garnet", StorageBlocks.YELLOW_GARNET.block);
+			registerCauldron("peridot", new Identifier("techreborn", "peridot_storage_block"));
+			registerCauldron("ruby", new Identifier("techreborn", "ruby_storage_block"));
+			registerCauldron("sapphire", new Identifier("techreborn", "sapphire_storage_block"));
+			registerCauldron("red_garnet", new Identifier("techreborn", "red_garnet_storage_block"));
+			registerCauldron("yellow_garnet", new Identifier("techreborn", "yellow_garnet_storage_block"));
 
 			// Metal storage blocks
-			registerCauldron("zinc", StorageBlocks.ZINC.block);
-			registerCauldron("aluminum", StorageBlocks.ALUMINUM.block);
-			registerCauldron("brass", StorageBlocks.BRASS.block);
-			registerCauldron("bronze", StorageBlocks.BRONZE.block);
-			registerCauldron("copper", StorageBlocks.COPPER.block);
-			registerCauldron("silver", StorageBlocks.SILVER.block);
-			registerCauldron("electrum", StorageBlocks.ELECTRUM.block);
-			registerCauldron("invar", StorageBlocks.INVAR.block);
-			registerCauldron("nickel", StorageBlocks.NICKEL.block);
-			registerCauldron("lead", StorageBlocks.LEAD.block);
-			registerCauldron("platinum", StorageBlocks.PLATINUM.block);
-			registerCauldron("refined_iron", StorageBlocks.REFINED_IRON.block);
-			registerCauldron("steel", StorageBlocks.STEEL.block);
-			registerCauldron("tin", StorageBlocks.TIN.block);
+			registerCauldron("zinc", new Identifier("techreborn", "zinc_storage_block"));
+			registerCauldron("aluminum", new Identifier("techreborn", "aluminum_storage_block"));
+			registerCauldron("brass", new Identifier("techreborn", "brass_storage_block"));
+			registerCauldron("bronze", new Identifier("techreborn", "bronze_storage_block"));
+			registerCauldron("copper", new Identifier("techreborn", "copper_storage_block"));
+			registerCauldron("silver", new Identifier("techreborn", "silver_storage_block"));
+			registerCauldron("electrum", new Identifier("techreborn", "electrum_storage_block"));
+			registerCauldron("invar", new Identifier("techreborn", "invar_storage_block"));
+			registerCauldron("nickel", new Identifier("techreborn", "nickel_storage_block"));
+			registerCauldron("lead", new Identifier("techreborn", "lead_storage_block"));
+			registerCauldron("platinum", new Identifier("techreborn", "platinum_storage_block"));
+			registerCauldron("refined_iron", new Identifier("techreborn", "refined_iron_storage_block"));
+			registerCauldron("steel", new Identifier("techreborn", "steel_storage_block"));
+			registerCauldron("tin", new Identifier("techreborn", "tin_storage_block"));
 
 			// Refractory metal storage blocks
-			registerSpecialCauldron("tungsten", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TUNGSTEN.block).build()));
-			registerSpecialCauldron("tungstensteel", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TUNGSTENSTEEL.block).build()));
-			registerSpecialCauldron("iridium", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.IRIDIUM.block).build()));
-			registerSpecialCauldron("chrome", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.CHROME.block).build()));
-			registerSpecialCauldron("titanium", new LavaCauldronBlock(FabricBlockSettings.copy(StorageBlocks.TITANIUM.block).build()));
+			registerLavaCauldron("tungsten", new Identifier("techreborn", "tungsten_storage_block"));
+			registerLavaCauldron("tungstensteel", new Identifier("techreborn", "tungstensteel_storage_block"));
+			registerLavaCauldron("iridium", new Identifier("techreborn", "iridium_storage_block"));
+			registerLavaCauldron("chrome", new Identifier("techreborn", "chrome_storage_block"));
+			registerLavaCauldron("titanium", new Identifier("techreborn", "titanium_storage_block"));
 		}
 
 		// NonCorrelatedExtras
 		if (loader.isModLoaded("noncorrelatedextras")) {
-			registerCauldron("polarized_iron", Registry.BLOCK.get(new Identifier("noncorrelatedextras", "polarized_iron_block")));
+			registerCauldron("polarized_iron", new Identifier("noncorrelatedextras", "polarized_iron_block"));
 		}
 		
 		// Adabranium
 		if (loader.isModLoaded("adabraniummod")) {
-			registerCauldron("vibranium", ModBlocks.VIBRANIUM_BLOCK);
-			registerCauldron("adamantium", ModBlocks.ADAMANTIUM_BLOCK);
+			registerCauldron("vibranium", new Identifier("adabraniummod", "vibranium_block"));
+			registerCauldron("adamantium", new Identifier("adabraniummod", "adamantium_block"));
 		}
 
 		if (loader.isModLoaded("cornflower")) {
@@ -188,8 +214,8 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		// Stones
-		registerCauldron("stone");
-		registerCauldron("cobblestone");
+		registerCauldron("stone", Blocks.STONE);
+		registerCauldron("cobblestone", Blocks.COBBLESTONE);
 		registerCauldron("mossy_cobblestone", Blocks.MOSSY_COBBLESTONE);
 
 		// Stone variants
@@ -209,37 +235,38 @@ public class Main implements ModInitializer {
 		registerCauldron("red_sandstone", Blocks.RED_SANDSTONE);
 
 		// Wood
-		registerFlammableCauldron("oak", Blocks.OAK_PLANKS);
-		registerFlammableCauldron("spruce", Blocks.SPRUCE_PLANKS);
-		registerFlammableCauldron("birch", Blocks.BIRCH_PLANKS);
-		registerFlammableCauldron("jungle", Blocks.JUNGLE_PLANKS);
-		registerFlammableCauldron("acacia", Blocks.ACACIA_PLANKS);
-		registerFlammableCauldron("dark_oak", Blocks.DARK_OAK_PLANKS);
-		FuelRegistry.INSTANCE.add(TagRegistry.item(new Identifier("extracauldrons", "wooden_cauldrons")), 300);
+		registerCauldron("oak", Blocks.OAK_PLANKS);
+		registerCauldron("spruce", Blocks.SPRUCE_PLANKS);
+		registerCauldron("birch", Blocks.BIRCH_PLANKS);
+		registerCauldron("jungle", Blocks.JUNGLE_PLANKS);
+		registerCauldron("acacia", Blocks.ACACIA_PLANKS);
+		registerCauldron("dark_oak", Blocks.DARK_OAK_PLANKS);
+		FlammableBlockRegistry.getInstance(Blocks.FIRE).add(WOODEN_CAULDRON_BLOCKS, 5, 20);
+		FuelRegistry.INSTANCE.add(WOODEN_CAULDRON_ITEMS, 300);
 
 		// Metals and gems
-		registerSpecialCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));
+		registerCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));
 		registerCauldron("diamond", Blocks.DIAMOND_BLOCK);
 		registerCauldron("emerald", Blocks.EMERALD_BLOCK);
 
 		// Glass
-		GLASS_CAULDRON = registerSpecialWaterCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
-		WHITE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("white_stained_glass", new StainedGlassCauldronBlock(DyeColor.WHITE, FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS).build()));
-		ORANGE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("orange_stained_glass", new StainedGlassCauldronBlock(DyeColor.ORANGE, FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS).build()));
-		MAGENTA_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("magenta_stained_glass", new StainedGlassCauldronBlock(DyeColor.MAGENTA, FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS).build()));
-		LIGHT_BLUE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("light_blue_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIGHT_BLUE, FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS).build()));
-		YELLOW_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("yellow_stained_glass", new StainedGlassCauldronBlock(DyeColor.YELLOW, FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS).build()));
-		LIME_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("lime_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIME, FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS).build()));
-		PINK_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("pink_stained_glass", new StainedGlassCauldronBlock(DyeColor.PINK, FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS).build()));
-		GRAY_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("gray_stained_glass", new StainedGlassCauldronBlock(DyeColor.GRAY, FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS).build()));
-		LIGHT_GRAY_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("light_gray_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIGHT_GRAY, FabricBlockSettings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS).build()));
-		CYAN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("cyan_stained_glass", new StainedGlassCauldronBlock(DyeColor.CYAN, FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS).build()));
-		PURPLE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("purple_stained_glass", new StainedGlassCauldronBlock(DyeColor.PURPLE, FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS).build()));
-		BLUE_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("blue_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLUE, FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS).build()));
-		BROWN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("brown_stained_glass", new StainedGlassCauldronBlock(DyeColor.BROWN, FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS).build()));
-		GREEN_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("green_stained_glass", new StainedGlassCauldronBlock(DyeColor.GREEN, FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS).build()));
-		RED_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("red_stained_glass", new StainedGlassCauldronBlock(DyeColor.RED, FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS).build()));
-		BLACK_STAINED_GLASS_CAULDRON = registerSpecialWaterCauldron("black_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLACK, FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS).build()));
+		GLASS_CAULDRON = registerCauldron("glass", new GlassCauldronBlock(FabricBlockSettings.copy(Blocks.GLASS).build()));
+		WHITE_STAINED_GLASS_CAULDRON = registerCauldron("white_stained_glass", new StainedGlassCauldronBlock(DyeColor.WHITE, FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS).build()));
+		ORANGE_STAINED_GLASS_CAULDRON = registerCauldron("orange_stained_glass", new StainedGlassCauldronBlock(DyeColor.ORANGE, FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS).build()));
+		MAGENTA_STAINED_GLASS_CAULDRON = registerCauldron("magenta_stained_glass", new StainedGlassCauldronBlock(DyeColor.MAGENTA, FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS).build()));
+		LIGHT_BLUE_STAINED_GLASS_CAULDRON = registerCauldron("light_blue_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIGHT_BLUE, FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS).build()));
+		YELLOW_STAINED_GLASS_CAULDRON = registerCauldron("yellow_stained_glass", new StainedGlassCauldronBlock(DyeColor.YELLOW, FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS).build()));
+		LIME_STAINED_GLASS_CAULDRON = registerCauldron("lime_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIME, FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS).build()));
+		PINK_STAINED_GLASS_CAULDRON = registerCauldron("pink_stained_glass", new StainedGlassCauldronBlock(DyeColor.PINK, FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS).build()));
+		GRAY_STAINED_GLASS_CAULDRON = registerCauldron("gray_stained_glass", new StainedGlassCauldronBlock(DyeColor.GRAY, FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS).build()));
+		LIGHT_GRAY_STAINED_GLASS_CAULDRON = registerCauldron("light_gray_stained_glass", new StainedGlassCauldronBlock(DyeColor.LIGHT_GRAY, FabricBlockSettings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS).build()));
+		CYAN_STAINED_GLASS_CAULDRON = registerCauldron("cyan_stained_glass", new StainedGlassCauldronBlock(DyeColor.CYAN, FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS).build()));
+		PURPLE_STAINED_GLASS_CAULDRON = registerCauldron("purple_stained_glass", new StainedGlassCauldronBlock(DyeColor.PURPLE, FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS).build()));
+		BLUE_STAINED_GLASS_CAULDRON = registerCauldron("blue_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLUE, FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS).build()));
+		BROWN_STAINED_GLASS_CAULDRON = registerCauldron("brown_stained_glass", new StainedGlassCauldronBlock(DyeColor.BROWN, FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS).build()));
+		GREEN_STAINED_GLASS_CAULDRON = registerCauldron("green_stained_glass", new StainedGlassCauldronBlock(DyeColor.GREEN, FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS).build()));
+		RED_STAINED_GLASS_CAULDRON = registerCauldron("red_stained_glass", new StainedGlassCauldronBlock(DyeColor.RED, FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS).build()));
+		BLACK_STAINED_GLASS_CAULDRON = registerCauldron("black_stained_glass", new StainedGlassCauldronBlock(DyeColor.BLACK, FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS).build()));
 
 		// Coal
 		FuelRegistry.INSTANCE.add(registerCauldron("coal", Blocks.COAL_BLOCK), 6400);
@@ -249,16 +276,16 @@ public class Main implements ModInitializer {
 		registerCauldron("honeycomb", Blocks.HONEYCOMB_BLOCK);
 		registerCauldron("quartz", Blocks.QUARTZ_BLOCK);
 		registerCauldron("lapis", Blocks.LAPIS_BLOCK);
-		registerSpecialWaterCauldron("redstone", new RedstoneCauldronBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK).build()));
-		registerSpecialWaterCauldron("freezing", new FreezingCauldronBlock(FabricBlockSettings.copy(Blocks.BLUE_ICE).build()));
-		registerSpecialCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
-		registerSpecialCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
-		registerSpecialCauldron("nether_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS).build()));
-		registerSpecialCauldron("red_nether_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.RED_NETHER_BRICKS).build()));
-		registerSpecialCauldron("end_stone_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.END_STONE_BRICKS).build()));
+		registerCauldron("redstone", new RedstoneCauldronBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK).build()));
+		registerCauldron("freezing", new FreezingCauldronBlock(FabricBlockSettings.copy(Blocks.BLUE_ICE).build()));
+		registerCauldron("brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
+		registerCauldron("obsidian", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).build()));
+		registerCauldron("nether_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS).build()));
+		registerCauldron("red_nether_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.RED_NETHER_BRICKS).build()));
+		registerCauldron("end_stone_brick", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.END_STONE_BRICKS).build()));
 
 		// Shulker
-		registerSpecialWaterCauldron("shulker", new ShulkerCauldronBlock(FabricBlockSettings.copy(Blocks.SHULKER_BOX).build()));
+		registerCauldron("shulker", new ShulkerCauldronBlock(FabricBlockSettings.copy(Blocks.SHULKER_BOX).build()));
 
 		// Mod integrations
 		registerModIntergationCauldrons();
