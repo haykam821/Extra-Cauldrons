@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/soaked_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
