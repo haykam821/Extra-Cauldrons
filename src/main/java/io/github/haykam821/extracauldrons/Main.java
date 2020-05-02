@@ -219,6 +219,7 @@ public class Main implements ModInitializer {
 			registerCauldron("bamboo", new Identifier("blockus", "bamboo_planks"));
 
 			// Sandstone
+			registerCauldron("sandy_brick", new Identifier("blockus", "sandy_bricks"));
 			registerCauldron("sandstone_brick", new Identifier("blockus", "sandstone_bricks"));
 			registerCauldron("red_sandstone_brick", new Identifier("blockus", "red_sandstone_bricks"));
 			registerCauldron("soul_sandstone", new Identifier("blockus", "soul_sandstone"));
