@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/water_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
