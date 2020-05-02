@@ -230,6 +230,7 @@ public class Main implements ModInitializer {
 			registerLavaCauldron("polished_end_stone", new Identifier("blockus", "polished_end_stone"));
 
 			// Brick
+			registerCauldron("andesite_brick", new Identifier("blockus", "andesite_bricks"));
 			registerCauldron("honeycomb_brick", new Identifier("blockus", "honeycomb_bricks"));
 
 			// Stained stone brick
