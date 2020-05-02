@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level3",
+	"textures": {
+		"all": "blockus:block/bluestone"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

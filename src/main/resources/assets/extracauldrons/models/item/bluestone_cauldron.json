@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/bluestone_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "blockus:bluestone"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:bluestone_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
