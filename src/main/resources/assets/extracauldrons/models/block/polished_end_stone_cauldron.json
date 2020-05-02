@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron",
+	"textures": {
+		"all": "blockus:block/polished_end_stone"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

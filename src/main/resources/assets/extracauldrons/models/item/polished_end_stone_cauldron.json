@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/polished_end_stone_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
