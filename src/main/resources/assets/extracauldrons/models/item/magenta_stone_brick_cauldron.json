@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/magenta_stone_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

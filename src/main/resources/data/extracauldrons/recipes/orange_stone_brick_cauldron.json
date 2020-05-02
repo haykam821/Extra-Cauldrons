@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "blockus:orange_stone_bricks"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:orange_stone_brick_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

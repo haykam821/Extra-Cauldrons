@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "blockus:gray_stone_bricks"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:gray_stone_brick_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

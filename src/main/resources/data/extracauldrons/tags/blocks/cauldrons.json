@@ -65,9 +65,24 @@
 					"libcd:mod_loaded": "blockus"
 				},
 				"values": [
+					"extracauldrons:black_stone_brick_cauldron",
+					"extracauldrons:blue_stone_brick_cauldron",
+					"extracauldrons:brown_stone_brick_cauldron",
+					"extracauldrons:cyan_stone_brick_cauldron",
+					"extracauldrons:gray_stone_brick_cauldron",
+					"extracauldrons:green_stone_brick_cauldron",
+					"extracauldrons:light_blue_stone_brick_cauldron",
+					"extracauldrons:lime_stone_brick_cauldron",
+					"extracauldrons:magenta_stone_brick_cauldron",
+					"extracauldrons:orange_stone_brick_cauldron",
+					"extracauldrons:pink_stone_brick_cauldron",
 					"extracauldrons:polished_netherrack_cauldron",
+					"extracauldrons:purple_stone_brick_cauldron",
+					"extracauldrons:red_stone_brick_cauldron",
 					"extracauldrons:soul_sandstone_brick_cauldron",
-					"extracauldrons:soul_sandstone_cauldron"
+					"extracauldrons:soul_sandstone_cauldron",
+					"extracauldrons:white_stone_brick_cauldron",
+					"extracauldrons:yellow_stone_brick_cauldron"
 				]
 			},
 			{

@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/lime_stone_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

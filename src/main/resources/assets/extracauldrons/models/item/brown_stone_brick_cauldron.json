@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/brown_stone_brick_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

@@ -224,6 +224,23 @@ public class Main implements ModInitializer {
 
 			// Polished
 			registerLavaCauldron("polished_netherrack", new Identifier("blockus", "polished_netherrack"));
+
+			// Stained stone brick
+			registerCauldron("white_stone_brick", new Identifier("blockus", "white_stone_bricks"));
+			registerCauldron("orange_stone_brick", new Identifier("blockus", "orange_stone_bricks"));
+			registerCauldron("magenta_stone_brick", new Identifier("blockus", "magenta_stone_bricks"));
+			registerCauldron("light_blue_stone_brick", new Identifier("blockus", "light_blue_stone_bricks"));
+			registerCauldron("yellow_stone_brick", new Identifier("blockus", "yellow_stone_bricks"));
+			registerCauldron("lime_stone_brick", new Identifier("blockus", "lime_stone_bricks"));
+			registerCauldron("pink_stone_brick", new Identifier("blockus", "pink_stone_bricks"));
+			registerCauldron("gray_stone_brick", new Identifier("blockus", "gray_stone_bricks"));
+			registerCauldron("cyan_stone_brick", new Identifier("blockus", "cyan_stone_bricks"));
+			registerCauldron("purple_stone_brick", new Identifier("blockus", "purple_stone_bricks"));
+			registerCauldron("blue_stone_brick", new Identifier("blockus", "blue_stone_bricks"));
+			registerCauldron("brown_stone_brick", new Identifier("blockus", "brown_stone_bricks"));
+			registerCauldron("green_stone_brick", new Identifier("blockus", "green_stone_bricks"));
+			registerCauldron("red_stone_brick", new Identifier("blockus", "red_stone_bricks"));
+			registerCauldron("black_stone_brick", new Identifier("blockus", "black_stone_bricks"));
 		}
 	}
 
