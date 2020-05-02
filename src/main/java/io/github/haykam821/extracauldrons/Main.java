@@ -30,9 +30,9 @@ public class Main implements ModInitializer {
 	public static final String MOD_ID = "extracauldrons";
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-	public static final Identifier WOODEN_CAULDRONS_ID = new Identifier(MOD_ID, "wooden_cauldrons");
-	public static final Tag<Block> WOODEN_CAULDRON_BLOCKS = TagRegistry.block(WOODEN_CAULDRONS_ID);
-	public static final Tag<Item> WOODEN_CAULDRON_ITEMS = TagRegistry.item(WOODEN_CAULDRONS_ID);
+	public static final Identifier FLAMMABLE_WOODEN_CAULDRONS_ID = new Identifier(MOD_ID, "flammable_wooden_cauldrons");
+	public static final Tag<Block> FLAMMABLE_WOODEN_CAULDRON_BLOCKS = TagRegistry.block(FLAMMABLE_WOODEN_CAULDRONS_ID);
+	public static final Tag<Item> FLAMMABLE_WOODEN_CAULDRON_ITEMS = TagRegistry.item(FLAMMABLE_WOODEN_CAULDRONS_ID);
 
 	public static Block GLASS_CAULDRON;
 	public static Block WHITE_STAINED_GLASS_CAULDRON;
@@ -206,8 +206,17 @@ public class Main implements ModInitializer {
 			registerCauldron("adamantium", new Identifier("adabraniummod", "adamantium_block"));
 		}
 
+		// Cornflower
 		if (loader.isModLoaded("cornflower")) {
-			registerCauldron("timeworn_brick", CornflowerBlocks.TIMEWORN_BRICK);
+			registerCauldron("timeworn_brick", new Identifier("cornflower", "timeworn_brick"));
+		}
+
+		// Blockus
+		if (loader.isModLoaded("blockus")) {
+			// Wood
+			registerCauldron("white_oak", new Identifier("blockus", "white_oak_planks"));
+			registerCauldron("charred", new Identifier("blockus", "charred_planks"));
+			registerCauldron("bamboo", new Identifier("blockus", "bamboo_planks"));
 		}
 	}
 
@@ -241,8 +250,8 @@ public class Main implements ModInitializer {
 		registerCauldron("jungle", Blocks.JUNGLE_PLANKS);
 		registerCauldron("acacia", Blocks.ACACIA_PLANKS);
 		registerCauldron("dark_oak", Blocks.DARK_OAK_PLANKS);
-		FlammableBlockRegistry.getInstance(Blocks.FIRE).add(WOODEN_CAULDRON_BLOCKS, 5, 20);
-		FuelRegistry.INSTANCE.add(WOODEN_CAULDRON_ITEMS, 300);
+		FlammableBlockRegistry.getInstance(Blocks.FIRE).add(FLAMMABLE_WOODEN_CAULDRON_BLOCKS, 5, 20);
+		FuelRegistry.INSTANCE.add(FLAMMABLE_WOODEN_CAULDRON_ITEMS, 300);
 
 		// Metals and gems
 		registerCauldron("gold", new LavaCauldronBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK).build()));

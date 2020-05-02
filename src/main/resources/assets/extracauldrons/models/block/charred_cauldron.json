@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron",
+	"textures": {
+		"all": "blockus:block/charred_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/white_oak_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

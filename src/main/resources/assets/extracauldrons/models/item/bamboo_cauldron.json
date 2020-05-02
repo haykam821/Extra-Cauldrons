@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/bamboo_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

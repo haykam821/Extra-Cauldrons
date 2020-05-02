@@ -63,6 +63,7 @@ dependencies {
 		modCompile("curse.maven:noncorrelatedextras:2888076");
 		modCompile("curse.maven:adabranium:2877863");
 		modCompile("curse.maven:cornflower:2925096");
+		modCompile("curse.maven:blockus:2938646");
 	} else {
 		modCompileOnly("com.terraformersmc:terrestria:${project.terrestria_version}");
 		modCompileOnly("com.terraformersmc:traverse:${project.traverse_version}");
@@ -73,6 +74,7 @@ dependencies {
 		modCompileOnly("curse.maven:noncorrelatedextras:2888076");
 		modCompileOnly("curse.maven:adabranium:2877863");
 		modCompileOnly("curse.maven:cornflower:2925096");
+		modCompileOnly("curse.maven:blockus:2938646");
 	}
 }
 

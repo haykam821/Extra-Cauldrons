@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level2",
+	"textures": {
+		"all": "blockus:block/bamboo_planks"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

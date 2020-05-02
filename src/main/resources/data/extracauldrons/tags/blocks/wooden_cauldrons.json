@@ -1,51 +1,15 @@
 {
 	"values": [
-		"extracauldrons:acacia_cauldron",
-		"extracauldrons:birch_cauldron",
-		"extracauldrons:dark_oak_cauldron",
-		"extracauldrons:jungle_cauldron",
-		"extracauldrons:oak_cauldron",
-		"extracauldrons:spruce_cauldron"
+		"#extracauldrons:flammable_wooden_cauldrons"
 	],
 	"libcd": {
 		"entries": [
 			{
 				"when": {
-					"libcd:mod_loaded": "techreborn"
+					"libcd:mod_loaded": "blockus"
 				},
 				"values": [
-					"extracauldrons:reborn_rubber_cauldron"
-				]
-			},
-			{
-				"when": {
-					"libcd:mod_loaded": "terrestria"
-				},
-				"values": [
-					"extracauldrons:cypress_cauldron",
-					"extracauldrons:hemlock_cauldron",
-					"extracauldrons:japanese_maple_cauldron",
-					"extracauldrons:rainbow_eucalyptus_cauldron",
-					"extracauldrons:redwood_cauldron",
-					"extracauldrons:rubber_cauldron",
-					"extracauldrons:sakura_cauldron",
-					"extracauldrons:willow_cauldron"
-				]
-			},
-			{
-				"when": {
-					"libcd:mod_loaded": "thehallow"
-				},
-				"values": [
-					"extracauldrons:deadwood_cauldron"
-				]
-			},
-			{
-				"when": {
-					"libcd:mod_loaded": "traverse"
-				},
-				"values": [
-					"extracauldrons:fir_cauldron"
+					"extracauldrons:charred_cauldron"
 				]
 			}
 		]
