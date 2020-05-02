@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/quartz_tile_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
