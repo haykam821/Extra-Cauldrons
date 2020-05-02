@@ -1,0 +1,6 @@
+{
+	"parent": "extracauldrons:block/marble_cauldron",
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}

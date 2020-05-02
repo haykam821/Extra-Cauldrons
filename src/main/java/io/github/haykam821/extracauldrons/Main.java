@@ -246,6 +246,7 @@ public class Main implements ModInitializer {
 
 			// Limestone, marble, and bluestone
 			registerCauldron("limestone", new Identifier("blockus", "limestone"));
+			registerCauldron("marble", new Identifier("blockus", "marble"));
 
 			// Stained stone brick
 			registerCauldron("white_stone_brick", new Identifier("blockus", "white_stone_bricks"));
