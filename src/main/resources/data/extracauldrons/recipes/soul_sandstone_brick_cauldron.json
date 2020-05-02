@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"# #",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "blockus:soul_sandstone_bricks"
+		}
+	},
+	"result": {
+		"item": "extracauldrons:soul_sandstone_brick_cauldron"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
