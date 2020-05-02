@@ -1,0 +1,9 @@
+{
+	"parent": "extracauldrons:block/full_cauldron_level1",
+	"textures": {
+		"all": "blockus:block/honeycomb_bricks"
+	},
+	"when": {
+		"libcd:mod_loaded": "blockus"
+	}
+}
